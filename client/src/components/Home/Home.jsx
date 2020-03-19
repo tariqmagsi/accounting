@@ -4,6 +4,7 @@ import Navbar from "../Navbar/Navbar";
 import Quote from "../Quote/Quote";
 import Footer from "../Footer/Footer";
 import { NavLink } from "react-router-dom";
+import Loading from 'react-fullscreen-loading';
 
 class Home extends Component {
   state = { isLoading: true };
@@ -48,7 +49,7 @@ class Home extends Component {
         </div>
       );
     } else {
-      return <div></div>;
+      return <Loading loading background="#eee" loaderColor="rgba(0,0,0,0.5)" />;
     }
   }
 }

@@ -63,7 +63,7 @@ class Profile extends Component {
           <Sidebar />
           <Navbar />
           <div className="profile">
-            <h4 style={{ marginTop: "70px" }}>Profile Information</h4>
+            <h4 style={{ marginTop: "70px" }}>Información del Perfil</h4>
             <br />
             <Card>
               <Card.Body>
@@ -75,7 +75,7 @@ class Profile extends Component {
                     <tbody>
                       <tr>
                         <td style={{ textAlign: "left" }}>
-                          <strong>Name:</strong>
+                          <strong>Nombre:</strong>
                         </td>
                         <td style={{ padding: "20px", textAlign: "left" }}>
                           {this.state.name}
@@ -116,7 +116,7 @@ class Profile extends Component {
                               }
                             }}
                           >
-                            Edit Information
+                            Editar Informacion
                           </Button>
                           <EditDialog
                             show={this.state.openEditInfo}
@@ -149,7 +149,7 @@ class Profile extends Component {
                               }
                             }}
                           >
-                            Change Password
+                            Cambia la contraseña
                           </Button>
                           <EditDialog
                             show={this.state.openChangePass}

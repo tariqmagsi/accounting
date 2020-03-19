@@ -47,7 +47,7 @@ class SecretKey extends Component {
         this.setState({ isLoading: true }, () => {
           if (json.success) {
             this.setState({
-              success: "Secret Key Changed Successfully",
+              success: "Clave secreta modificada con éxito",
               error: "",
               oldPassError: "",
               secretKey: "",
@@ -56,19 +56,21 @@ class SecretKey extends Component {
             });
           } else {
             this.setState({
-              error: "Something went wrong",
+              error: "Algo salió mal",
               success: "",
-              oldPassError: ""
+              oldPassError: "",
+              success: ""
             });
           }
         });
       })
       .catch(err => {
         this.setState({
-          error: "Something went wrong",
+          error: "Algo salió mal",
           success: "",
           oldPassError: "",
-          isLoading: true
+          isLoading: true,
+          success: ""
         });
       });
   };
@@ -89,11 +91,12 @@ class SecretKey extends Component {
           this.updatePostRequest();
           this.setState({
             oldPassError: "",
-            error: ""
+            error: "",
+            success: ""
           });
         } else {
           this.setState({
-            oldPassError: "Old Secret Key wrong",
+            oldPassError: "Clave secreta antigua equivocada",
             success: "",
             error: "",
             isLoading: true
@@ -102,7 +105,7 @@ class SecretKey extends Component {
       })
       .catch(err => {
         this.setState({
-          error: "Something went wrong",
+          error: "Algo salió mal",
           oldPassError: "",
           success: "",
           isLoading: true
@@ -117,11 +120,11 @@ class SecretKey extends Component {
         this.state.retypesecretKey.trim() === "" ||
         this.state.oldsecretKey.trim() === ""
       ) {
-        this.setState({ requireError: "All Fields Required" });
+        this.setState({ requireError: "Todos los campos requeridos", success: "" });
       } else if (this.state.secretKey.length < 8) {
         this.setState({
           secretKeyLengthError:
-            "New Secret Key must be greater than or equal to 8 characters"
+            "La nueva clave secreta debe ser mayor o igual a 8 caracteres", success: ""
         });
       } else if (this.state.secretKey.length >= 8) {
         let flag = false;
@@ -135,7 +138,8 @@ class SecretKey extends Component {
           });
           if (this.state.secretKey !== this.state.retypesecretKey) {
             this.setState({
-              secretKeyEqualError: "New Secret Keys are not equal"
+              secretKeyEqualError: "Las nuevas claves secretas no son iguales",
+              success: ""
             });
           }
         } else if (
@@ -147,7 +151,8 @@ class SecretKey extends Component {
           flag = false;
           this.setState({
             secretKeyContainError:
-              "New Secret Key must contain 1 numeric value and 1 capital letter"
+              "La nueva clave secreta debe contener 1 valor numérico y 1 letra mayúscula",
+              success: ""
           });
         }
         if (flag) {
@@ -167,7 +172,7 @@ class SecretKey extends Component {
         <Sidebar />
         <Navbar />
         <div className="dashboard">
-          <h4 style={{ marginTop: "70px" }}>Secret Key</h4>
+          <h4 style={{ marginTop: "70px" }}>Llave secreta</h4>
           <br />
           <Card
             style={{
@@ -207,33 +212,33 @@ class SecretKey extends Component {
 
               <Form style={{ textAlign: "left", width: "300px" }}>
                 <Form.Group>
-                  <Form.Label>Old Secret Key:</Form.Label>
+                  <Form.Label>Vieja clave secreta:</Form.Label>
                   <Form.Control
                     type="password"
                     name="oldsecretKey"
                     value={this.state.oldsecretKey}
                     onChange={this.whenChangeHandler}
-                    placeholder="Old Secret Key*"
+                    placeholder="Vieja clave secreta*"
                   />
                 </Form.Group>
                 <Form.Group>
-                  <Form.Label>New Secret Key:</Form.Label>
+                  <Form.Label>Nueva clave secreta:</Form.Label>
                   <Form.Control
                     type="password"
                     name="secretKey"
                     value={this.state.secretKey}
                     onChange={this.whenChangeHandler}
-                    placeholder="New Secret Key*"
+                    placeholder="Nueva clave secreta*"
                   />
                 </Form.Group>
                 <Form.Group>
-                  <Form.Label>Retype New Secret Key:</Form.Label>
+                  <Form.Label>Vuelva a escribir la nueva clave secreta:</Form.Label>
                   <Form.Control
                     type="password"
                     name="retypesecretKey"
                     value={this.state.retypesecretKey}
                     onChange={this.whenChangeHandler}
-                    placeholder="Retype New Secret Key*"
+                    placeholder="Vuelva a escribir la nueva clave secreta*"
                   />
                 </Form.Group>
                 <br />
@@ -244,7 +249,7 @@ class SecretKey extends Component {
                       style={{ width: "100%" }}
                       onClick={this.updateHandler}
                     >
-                      Update
+                      Actualizar
                     </Button>
                   </Form.Group>
                 ) : (

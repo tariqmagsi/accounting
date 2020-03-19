@@ -5,7 +5,8 @@ import {
   Person,
   ExitToApp,
   Dashboard,
-  Lock
+  Lock,
+  Email
 } from "@material-ui/icons";
 import { Link, withRouter } from "react-router-dom";
 import { removeFromStorage, getFromStorage } from "../../../utils/storage";
@@ -27,11 +28,11 @@ class Sidebar extends Component {
           removeFromStorage(process.env.REACT_APP_TOKEN_KEY);
           this.props.history.replace("/Login");
         } else {
-          alert("Something went wrong");
+          alert("Algo salió mal");
         }
       })
       .catch(err => {
-        alert("Something went wrong");
+        alert("Algo salió mal");
       });
   };
 
@@ -50,7 +51,7 @@ class Sidebar extends Component {
           }}
         >
           <Link
-            to="/AdminDashboard"
+            to="/Tablero"
             style={{ textDecoration: "none", color: "white" }}
           >
             <Dashboard />
@@ -59,16 +60,16 @@ class Sidebar extends Component {
 
         <ul>
           <Link
-            to="/AdminDashboard"
+            to="/Tablero"
             style={{ textDecoration: "none", color: "white" }}
           >
             <li>
               <Home />
-              <span> Dashboard</span>
+              <span> Tablero</span>
             </li>
           </Link>
           <Link
-            to="/AdminEquipo"
+            to="/Equipo"
             style={{ textDecoration: "none", color: "white" }}
           >
             <li>
@@ -76,29 +77,37 @@ class Sidebar extends Component {
               <span> Equipo</span>
             </li>
           </Link>
-
           <Link
-            to="/AdminSecretKey"
+            to="/Email"
+            style={{ textDecoration: "none", color: "white" }}
+          >
+            <li>
+              <Email />
+              <span> Email</span>
+            </li>
+          </Link>
+          <Link
+            to="/Llave"
             style={{ textDecoration: "none", color: "white" }}
           >
             <li>
               <Lock />
-              <span> Key</span>
+              <span> Llave</span>
             </li>
           </Link>
           <Link
-            to="/AdminProfile"
+            to="/Perfil"
             style={{ textDecoration: "none", color: "white" }}
           >
             <li>
               <Person />
-              <span> Profile</span>
+              <span> Perfil</span>
             </li>
           </Link>
 
           <li onClick={this.logoutHandler}>
             <ExitToApp />
-            <span> Logout</span>
+            <span> Cerrar sesión</span>
           </li>
         </ul>
       </div>

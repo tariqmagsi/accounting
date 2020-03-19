@@ -26,10 +26,10 @@ class Dashboard extends Component {
           if (json.success) {
             this.setState({ pending: json.appointment });
           } else {
-            this.setState({ error: "Something went wrong" });
+            this.setState({ error: "Algo salió mal" });
           }
         })
-        .catch(err => this.setState({ error: "Something went wrong" }));
+        .catch(err => this.setState({ error: "Algo salió mal" }));
     } else {
       this.props.history.push("/Login");
     }
@@ -52,10 +52,10 @@ class Dashboard extends Component {
           if (json.success) {
             this.setState({ approved: json.appointment });
           } else {
-            this.setState({ error: "Something went wrong" });
+            this.setState({ error: "Algo salió mal" });
           }
         })
-        .catch(err => this.setState({ error: "Something went wrong" }));
+        .catch(err => this.setState({ error: "Algo salió mal" }));
     } else {
       this.props.history.push("/Login");
     }
@@ -105,8 +105,7 @@ class Dashboard extends Component {
           <Sidebar />
           <Navbar />
           <div className="dashboard">
-            <h4 style={{ marginTop: "70px" }}></h4>
-            <br />
+            <br style={{ marginTop: "70px" }}/>
             <br />
             <br />
             <h4>Tablero</h4>

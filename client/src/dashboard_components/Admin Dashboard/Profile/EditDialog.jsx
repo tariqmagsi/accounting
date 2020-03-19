@@ -33,7 +33,7 @@ const EditDialog = props => {
         </Container>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
+        <Button onClick={props.onHide}>Cerca</Button>
       </Modal.Footer>
     </Modal>
   );

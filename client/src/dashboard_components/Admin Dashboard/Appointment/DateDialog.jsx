@@ -13,7 +13,13 @@ const DateDialog = props => {
       size="sm"
       className="color"
     >
+      <LoadingOverlay
+          active={props.isActive}
+          spinner
+          text="Por favor espera..."
+        >
       <Modal.Header closeButton>
+	  
         <Modal.Title
           id="contained-modal-title-vcenter"
           style={{ marginBottom: "-100px" }}
@@ -22,11 +28,7 @@ const DateDialog = props => {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <LoadingOverlay
-          active={props.isActive}
-          spinner
-          text="Por favor espera..."
-        >
+        
           <Container style={{ textAlign: "center" }}>
             {error !== "" && (
               <Alert variant="danger" style={{ fontSize: "12px" }}>
@@ -52,6 +54,7 @@ const DateDialog = props => {
               onClick={() => {
                 if (date.trim() !== "") {
                   props.approve(date);
+                  setDate("")
                 } else {
                   setError("Fecha y hora requeridas");
                 }
@@ -60,11 +63,12 @@ const DateDialog = props => {
               Aprobar
             </Button>
           </Container>
-        </LoadingOverlay>
+        
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
+        <Button onClick={props.onHide}>Cerca</Button>
       </Modal.Footer>
+	  </LoadingOverlay>
     </Modal>
   );
 };

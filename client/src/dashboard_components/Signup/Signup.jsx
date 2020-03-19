@@ -43,7 +43,7 @@ class Signup extends Component {
     for (let i = 0; i < 10; i++) {
       if (this.state.name.includes(i)) {
         this.setState({
-          nameError: "Name cannot be a number"
+          nameError: "El nombre no puede ser un número"
         });
         return false;
       }
@@ -59,15 +59,15 @@ class Signup extends Component {
         this.state.password.trim() === "" ||
         this.state.retypePassword.trim() === "" ||
         (this.state.secretKey.trim() === "" &&
-          window.location.pathname === "/AdminSignup")
+          window.location.pathname === "/Regístrate")
       ) {
-        this.setState({ requireError: "All Fields Required" });
+        this.setState({ requireError: "Todos los campos requeridos" });
       } else if (!validator.isEmail(this.state.email)) {
-        this.setState({ emailError: "Please provide valid email" });
+        this.setState({ emailError: "Por favor proporcione un correo electrónico válido" });
       } else if (this.state.password.length < 8) {
         this.setState({
           passwordLengthError:
-            "Password must be greater than or equal to 8 characters"
+            "La contraseña debe ser mayor o igual a 8 caracteres"
         });
       } else if (this.state.password.length >= 8) {
         let flag = false;
@@ -81,7 +81,7 @@ class Signup extends Component {
           });
           if (this.state.password !== this.state.retypePassword) {
             this.setState({
-              passwordEqualError: "New Passwords are not equal"
+              passwordEqualError: "Las nuevas contraseñas no son iguales"
             });
           }
         } else if (
@@ -93,7 +93,7 @@ class Signup extends Component {
           flag = false;
           this.setState({
             passwordContainError:
-              "New Password must contain 1 numeric value and 1 capital letter"
+              "La nueva contraseña debe contener 1 valor numérico y 1 letra mayúscula"
           });
         }
         if (flag) {
@@ -128,14 +128,14 @@ class Signup extends Component {
         this.setState({ isLoading: true }, () => {
           if (json.success) {
             setInStorage(process.env.REACT_APP_TOKEN_KEY, json.token);
-            this.props.history.replace("/AdminDashboard");
+            this.props.history.replace("/Tablero");
           } else {
-            this.setState({ error: "Email Already Exists" });
+            this.setState({ error: "El Email ya existe" });
           }
         });
       })
       .catch(err => {
-        this.setState({ error: "Email Already Exists", isLoading: true });
+        this.setState({ error: "El Email ya existe", isLoading: true });
       });
   };
 
@@ -154,12 +154,12 @@ class Signup extends Component {
         if (json.success) {
           this.signupPostRequest();
         } else {
-          this.setState({ error: "Secret Key Wrong", isLoading: true });
+          this.setState({ error: "Clave secreta incorrecta", isLoading: true });
         }
       })
       .catch(err => {
         this.setState({
-          error: "Something went wrong",
+          error: "Algo salió mal",
           isLoading: true
         });
       });
@@ -179,12 +179,12 @@ class Signup extends Component {
       .then(json => {
         if (json.success) {
           this.setState({ isLoggedIn: true }, () => {
-            this.props.history.push("/AdminDashboard");
+            this.props.history.push("/Tablero");
           });
         }
       })
       .catch(err => {
-        this.setState({ error: "User not authenticated", isLoggedIn: false });
+        this.setState({ error: "Usuario no autenticado", isLoggedIn: false });
       });
   };
 
@@ -218,16 +218,16 @@ class Signup extends Component {
               style={{ width: "300px" }}
             >
               {" "}
-              {"<-"} Back To Login
+              {"<-"} Atrás para iniciar sesión
             </Button>
-            {window.location.pathname !== "/AdminSignup" && (
+            {window.location.pathname !== "/Regístrate" && (
               <React.Fragment>
                 <br />
                 <br />
               </React.Fragment>
             )}
-            <h2>Signup</h2>
-            {window.location.pathname !== "/AdminSignup" && <br />}
+            <h2>Regístrate</h2>
+            {window.location.pathname !== "/Regístrate" && <br />}
             {(this.state.requireError !== "" ||
               this.state.nameError !== "" ||
               this.state.emailError !== "" ||
@@ -270,7 +270,7 @@ class Signup extends Component {
                 />
               </Form.Group>
               <Form.Group>
-                <Form.Label>Password:</Form.Label>
+                <Form.Label>Contraseña:</Form.Label>
                 <Form.Control
                   type="password"
                   name="password"
@@ -281,7 +281,7 @@ class Signup extends Component {
                 />
               </Form.Group>
               <Form.Group>
-                <Form.Label>Retype Password:</Form.Label>
+                <Form.Label>Vuelva a escribir la contraseña:</Form.Label>
                 <Form.Control
                   type="password"
                   name="retypePassword"
@@ -291,9 +291,9 @@ class Signup extends Component {
                   style={{ width: "300px" }}
                 />
               </Form.Group>
-              {window.location.pathname === "/AdminSignup" && (
+              {window.location.pathname === "/Regístrate" && (
                 <Form.Group>
-                  <Form.Label>Secret Key:</Form.Label>
+                  <Form.Label>Llave secreta:</Form.Label>
                   <Form.Control
                     type="password"
                     name="secretKey"
@@ -304,7 +304,7 @@ class Signup extends Component {
                   />
                 </Form.Group>
               )}
-              {window.location.pathname !== "/AdminSignup" && <br />}
+              {window.location.pathname !== "/Regístrate" && <br />}
               {this.state.isLoading ? (
                 <Form.Group>
                   <Button
@@ -312,7 +312,7 @@ class Signup extends Component {
                     style={{ width: "300px" }}
                     onClick={this.signupHandler}
                   >
-                    Signup
+                    Regístrate
                   </Button>
                 </Form.Group>
               ) : (

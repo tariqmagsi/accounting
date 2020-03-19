@@ -16,6 +16,9 @@ import Profile from "./dashboard_components/Admin Dashboard/Profile/Profile";
 import Login from "./dashboard_components/Login/Login";
 import SecretKey from "./dashboard_components/Admin Dashboard/Secret Key/SecretKey";
 import Appointment from "./dashboard_components/Admin Dashboard/Appointment/Appointment";
+import Email from "./dashboard_components/Admin Dashboard/Email/Email";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import "bootstrap-css-only/css/bootstrap.min.css";
 
 class App extends Component {
   createSecretKey = () => {
@@ -48,8 +51,43 @@ class App extends Component {
       })
       .catch(err => console.log(err));
   };
+
+  createEmail = () => {
+    fetch(process.env.REACT_APP_CREATE_EMAIL_API, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ 
+       email: "abc@gmail.com",
+       password: "1234"
+     })
+    })
+      .then(res => res.json())
+      .then(json => {})
+      .catch(err => console.log(err));
+  };
+
+  checkEmail = () => {
+    fetch(process.env.REACT_APP_GET_EMAIL_API, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then(res => res.json())
+      .then(json => {
+        if (json.success) {
+          if (!json.email) {
+            this.createEmail();
+          }
+        }
+      })
+      .catch(err => console.log(err));
+  };
   componentDidMount() {
     this.checkSecretKey();
+    this.checkEmail()
   }
   render() {
     return (
@@ -68,11 +106,12 @@ class App extends Component {
 
           {/* Dashboard Start Routes */}
           <Route path="/Login" component={Login} exact />
-          <Route path="/AdminSignup" component={Signup} exact />
-          <Route path="/AdminDashboard" component={Dashboard} exact />
-          <Route path="/AdminProfile" component={Profile} exact />
-          <Route path="/AdminSecretKey" component={SecretKey} exact />
-          <Route path="/AdminEquipo" component={Appointment} exact />
+          <Route path="/Regístrate" component={Signup} exact />
+          <Route path="/Tablero" component={Dashboard} exact />
+          <Route path="/Perfil" component={Profile} exact />
+          <Route path="/Llave" component={SecretKey} exact />
+          <Route path="/Equipo" component={Appointment} exact />
+          <Route path="/Email" component={Email} exact />
           {/*Dashboard End Routes*/}
 
           <Route path="/" component={NotFound} />

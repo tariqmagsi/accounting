@@ -34,7 +34,7 @@ class EditInfoForm extends Component {
     for (let i = 0; i < 10; i++) {
       if (this.state.name.includes(i)) {
         this.setState({
-          nameError: "Name cannot be a number"
+          nameError: "El nombre no puede ser un número"
         });
         return false;
       }
@@ -58,14 +58,14 @@ class EditInfoForm extends Component {
         this.setState({ isLoading: true }, () => {
           if (json.success) {
             this.setState(
-              { success: "Updated Successfully", error: "" },
+              { success: "Actualizado con éxito", error: "" },
               () => {
                 this.props.authenticateUser();
               }
             );
           } else {
             this.setState({
-              error: "Email/Username Already Exists",
+              error: "El Email ya existe",
               success: ""
             });
           }
@@ -73,7 +73,7 @@ class EditInfoForm extends Component {
       })
       .catch(err => {
         this.setState({
-          error: "Something went wrong",
+          error: "Algo salió mal",
           success: "",
           isLoading: true
         });
@@ -83,9 +83,9 @@ class EditInfoForm extends Component {
   updateHandler = () => {
     if (getFromStorage(process.env.REACT_APP_TOKEN_KEY)) {
       if (this.state.name.trim() === "" || this.state.email.trim() === "") {
-        this.setState({ requireError: "All Fields Required" });
+        this.setState({ requireError: "Todos los campos requeridos" });
       } else if (!validator.isEmail(this.state.email)) {
-        this.setState({ emailError: "Please provide valid email" });
+        this.setState({ emailError: "Por favor proporcione un correo electrónico válido" });
       } else if (this.nameError()) {
         this.setState({ isLoading: false }, () => {
           this.updatePostRequest();
@@ -122,13 +122,13 @@ class EditInfoForm extends Component {
 
         <Form style={{ textAlign: "left" }}>
           <Form.Group>
-            <Form.Label>Name:</Form.Label>
+            <Form.Label>Nombre:</Form.Label>
             <Form.Control
               type="text"
               name="name"
               value={this.state.name}
               onChange={this.whenChangeHanlder}
-              placeholder="Name*"
+              placeholder="Nombre*"
             />
           </Form.Group>
           <Form.Group>
@@ -154,7 +154,7 @@ class EditInfoForm extends Component {
                 align="center"
                 onClick={this.updateHandler}
               >
-                Update
+                Actualizar
               </Button>
             </Form.Group>
           ) : (

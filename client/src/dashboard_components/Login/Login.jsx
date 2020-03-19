@@ -24,7 +24,7 @@ class Login extends Component {
   loginHandler = e => {
     if (!getFromStorage(process.env.REACT_APP_TOKEN_KEY)) {
       if (this.state.email.trim() === "" && this.state.password.trim() === "") {
-        this.setState({ requireError: "All Fields Required" });
+        this.setState({ requireError: "Todos los campos requeridos" });
       } else {
         this.setState({ flag: false }, () => {
           this.loginPostRequest();
@@ -36,7 +36,7 @@ class Login extends Component {
   };
 
   signupHandler = () => {
-    this.props.history.push("/AdminSignup");
+    this.props.history.push("/Regístrate");
   };
 
   loginPostRequest = () => {
@@ -55,14 +55,14 @@ class Login extends Component {
         this.setState({ flag: true }, () => {
           if (json.success) {
             setInStorage(process.env.REACT_APP_TOKEN_KEY, json.token);
-            this.props.history.replace("/AdminDashboard");
+            this.props.history.replace("/Tablero");
           } else {
-            this.setState({ error: "Username/Email or Password incorrect" });
+            this.setState({ error: "Correo electrónico o contraseña incorrecta" });
           }
         });
       })
       .catch(err => {
-        this.setState({ error: "Something went wrong", flag: true });
+        this.setState({ error: "Algo salió mal", flag: true });
       });
   };
 
@@ -79,11 +79,11 @@ class Login extends Component {
       .then(res => res.json())
       .then(json => {
         if (json.success) {
-          this.props.history.push("/AdminDashboard");
+          this.props.history.push("/Tablero");
         }
       })
       .catch(err => {
-        this.setState({ error: "User not authenticated", isLoggedIn: false });
+        this.setState({ error: "Usuario no autenticado", isLoggedIn: false });
       });
   };
 
@@ -111,7 +111,7 @@ class Login extends Component {
               borderRadius: "5px"
             }}
           >
-            <h2>Login</h2>
+            <h2>Iniciar sesión</h2>
             <br />
             {(this.state.requireError !== "" || this.state.error !== "") && (
               <Alert variant="danger" style={{ fontSize: "12px" }}>
@@ -132,7 +132,7 @@ class Login extends Component {
                 />
               </Form.Group>
               <Form.Group>
-                <Form.Label>Password:</Form.Label>
+                <Form.Label>Contraseña:</Form.Label>
                 <Form.Control
                   type="password"
                   name="password"
@@ -150,7 +150,7 @@ class Login extends Component {
                     style={{ width: "300px" }}
                     onClick={this.loginHandler}
                   >
-                    Login
+                    Iniciar sesión
                   </Button>
                 </Form.Group>
               ) : (
@@ -167,7 +167,7 @@ class Login extends Component {
                   style={{ width: "300px" }}
                   onClick={this.signupHandler}
                 >
-                  Signup
+                  Regístrate
                 </Button>
               </Form.Group>
             </Form>

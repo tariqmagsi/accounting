@@ -48,13 +48,16 @@ class ChangePasswordForm extends Component {
         this.setState({ isLoading: true }, () => {
           if (json.success) {
             this.setState({
-              success: "Password Changed Successfully",
+              success: "Contraseña cambiada con éxito",
               error: "",
-              oldPassError: ""
+              oldPassError: "",
+              password: "",
+              retypePassword: "",
+              oldPassword: ""
             });
           } else {
             this.setState({
-              error: "Something went wrong",
+              error: "Algo salió mal",
               success: "",
               oldPassError: ""
             });
@@ -63,7 +66,7 @@ class ChangePasswordForm extends Component {
       })
       .catch(err => {
         this.setState({
-          error: "Something went wrong",
+          error: "Algo salió mal",
           success: "",
           oldPassError: "",
           isLoading: true
@@ -95,7 +98,7 @@ class ChangePasswordForm extends Component {
           });
         } else {
           this.setState({
-            oldPassError: "Old Password wrong",
+            oldPassError: "Contraseña anterior incorrecta",
             success: "",
             error: "",
             isLoading: true
@@ -104,7 +107,7 @@ class ChangePasswordForm extends Component {
       })
       .catch(err =>
         this.setState({
-          error: "Something went wrong",
+          error: "Algo salió mal",
           oldPassError: "",
           success: "",
           isLoading: true
@@ -119,11 +122,11 @@ class ChangePasswordForm extends Component {
         this.state.retypePassword.trim() === "" ||
         this.state.oldPassword.trim() === ""
       ) {
-        this.setState({ requireError: "All Fields Required" });
+        this.setState({ requireError: "Todos los campos requeridos" });
       } else if (this.state.password.length < 8) {
         this.setState({
           passwordLengthError:
-            "New Password must be greater than or equal to 8 characters"
+            "La nueva contraseña debe ser mayor o igual a 8 caracteres"
         });
       } else if (this.state.password.length >= 8) {
         let flag = false;
@@ -137,7 +140,7 @@ class ChangePasswordForm extends Component {
           });
           if (this.state.password !== this.state.retypePassword) {
             this.setState({
-              passwordEqualError: "New Passwords are not equal"
+              passwordEqualError: "Las nuevas contraseñas no son iguales"
             });
           }
         } else if (
@@ -149,7 +152,7 @@ class ChangePasswordForm extends Component {
           flag = false;
           this.setState({
             passwordContainError:
-              "New Password must contain 1 numeric value and 1 capital letter"
+              "La nueva contraseña debe contener 1 valor numérico y 1 letra mayúscula"
           });
         }
         if (flag) {
@@ -195,33 +198,33 @@ class ChangePasswordForm extends Component {
 
         <Form style={{ textAlign: "left" }}>
           <Form.Group>
-            <Form.Label>Old Password:</Form.Label>
+            <Form.Label>Contraseña anterior:</Form.Label>
             <Form.Control
               type="password"
               name="oldPassword"
               value={this.state.oldPassword}
               onChange={this.whenChangeHandler}
-              placeholder="Old Password*"
+              placeholder="Contraseña anterior*"
             />
           </Form.Group>
           <Form.Group>
-            <Form.Label>New Password:</Form.Label>
+            <Form.Label>Nueva contraseña:</Form.Label>
             <Form.Control
               type="password"
               name="password"
               value={this.state.password}
               onChange={this.whenChangeHandler}
-              placeholder="New Password*"
+              placeholder="Nueva contraseña*"
             />
           </Form.Group>
           <Form.Group>
-            <Form.Label>Retype New Password:</Form.Label>
+            <Form.Label>Reescriba nueva contraseña:</Form.Label>
             <Form.Control
               type="password"
               name="retypePassword"
               value={this.state.retypePassword}
               onChange={this.whenChangeHandler}
-              placeholder="Retype New Password*"
+              placeholder="Reescriba nueva contraseña*"
             />
           </Form.Group>
           <br />
@@ -232,7 +235,7 @@ class ChangePasswordForm extends Component {
                 style={{ width: "100%" }}
                 onClick={this.updateHandler}
               >
-                Update
+                Actualizar
               </Button>
             </Form.Group>
           ) : (

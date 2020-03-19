@@ -13,8 +13,11 @@ class Appointment extends Component {
     isLoggedIn: true,
     isPending: true,
     isActive: false,
+    emailAdmin: "",
+    passwordAdmin: "",
     id: "",
     date: "",
+    email: "",
     pendingAppointments: {
       columns: [
         { label: "ID", field: "_id", sort: "asc", width: 150 },
@@ -111,7 +114,7 @@ class Appointment extends Component {
             variant="outline-success"
             size="sm"
             onClick={() => {
-              this.setState({ open: true, id: arr[i]._id });
+              this.setState({ open: true, id: arr[i]._id, email: arr[i].email });
             }}
           >
             Aprobar
@@ -148,10 +151,10 @@ class Appointment extends Component {
               }
             );
           } else {
-            this.setState({ error: "Something went wrong" });
+            this.setState({ error: "Algo salió mal" });
           }
         })
-        .catch(err => this.setState({ error: "Something went wrong" }));
+        .catch(err => this.setState({ error: "Algo salió mal" }));
     } else {
       this.props.history.push("/Login");
     }
@@ -179,10 +182,10 @@ class Appointment extends Component {
               }
             });
           } else {
-            this.setState({ error: "Something went wrong" });
+            this.setState({ error: "Algo salió mal" });
           }
         })
-        .catch(err => this.setState({ error: "Something went wrong" }));
+        .catch(err => this.setState({ error: "Algo salió mal" }));
     } else {
       this.props.history.push("/Login");
     }
@@ -190,8 +193,10 @@ class Appointment extends Component {
 
   //Update appointment
   updateAppointmentPatchRequest = id => {
+    const time = (parseInt(this.state.date.split("T")[1].split(":")[0])>0 && parseInt(this.state.date.split("T")[1].split(":")[0])<13) ? "AM" : "PM"
+    const date = this.state.date.split("T")[0].split("-")[2]+"-"+this.state.date.split("T")[0].split("-")[1]+"-"+this.state.date.split("T")[0].split("-")[0]+" "+this.state.date.split("T")[1]+" "+time
     if (getFromStorage(process.env.REACT_APP_TOKEN_KEY)) {
-      fetch(process.env.REACT_APP_UPDATE_APPOINTMENT_API + `?id=${id}`, {
+      fetch(process.env.REACT_APP_UPDATE_APPOINTMENT_API + `?id=${id}&email=${this.state.emailAdmin}&password=${this.state.passwordAdmin}&emailClient=${this.state.email}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -201,16 +206,7 @@ class Appointment extends Component {
         },
         body: JSON.stringify({
           isApproved: true,
-          date:
-            this.state.date.getDate().split("T")[0].split("-")[2] +
-            "-" +
-            this.state.date.getDate().split("T")[0].split("-")[1] +
-            "-" +
-            this.state.date.getDate().split("T")[0].split("-")[0] +
-            " " +
-            this.state.date.split("T")[1] +
-            " " +
-            
+          date   
         })
       })
         .then(res => res.json())
@@ -220,10 +216,10 @@ class Appointment extends Component {
             this.approvedAppointmentGetRequest();
             this.setState({ open: false, isActive: false });
           } else {
-            this.setState({ error: "Something went wrong" });
+            this.setState({ error: "Algo salió mal" });
           }
         })
-        .catch(err => this.setState({ error: "Something went wrong" }));
+        .catch(err => this.setState({ error: "Algo salió mal" }));
     } else {
       this.props.history.push("/Login");
     }
@@ -256,7 +252,26 @@ class Appointment extends Component {
       });
   };
 
+  getEmail = () => {
+    fetch(process.env.REACT_APP_GET_EMAIL_API, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then(res => res.json())
+      .then(json => {
+        if (json.success) {
+          if (json.email) {
+            this.setState({emailAdmin: json.email.email, passwordAdmin: json.email.password})
+          }
+        }
+      })
+      .catch(err => console.log(err));
+  };
+
   componentDidMount() {
+    this.getEmail()
     if (getFromStorage(process.env.REACT_APP_TOKEN_KEY)) {
       this.authenticateUser();
     } else {
@@ -273,8 +288,7 @@ class Appointment extends Component {
           <Sidebar />
           <Navbar />
           <div className="dashboard">
-            <h4 style={{ marginTop: "70px" }}></h4>
-            <br />
+            <br style={{ marginTop: "70px" }}/>
             <br />
             <br />
             <h4>Equipo</h4>
