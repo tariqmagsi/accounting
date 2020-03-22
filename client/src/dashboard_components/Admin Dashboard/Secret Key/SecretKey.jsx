@@ -111,7 +111,8 @@ class SecretKey extends Component {
       });
   };
 
-  updateHandler = () => {
+  updateHandler = (e) => {
+    e.preventDefault()
     if (getFromStorage(process.env.REACT_APP_TOKEN_KEY)) {
       if (
         this.state.secretKey.trim() === "" ||
@@ -208,7 +209,7 @@ class SecretKey extends Component {
                 </Alert>
               )}
 
-              <Form style={{ textAlign: "left", width: "300px" }}>
+              <Form style={{ textAlign: "left", width: "300px" }}  onSubmit={this.updateHandler}>
                 <Form.Group>
                   <Form.Label>Vieja clave secreta:</Form.Label>
                   <Form.Control
@@ -245,7 +246,7 @@ class SecretKey extends Component {
                     <Button
                       variant="danger"
                       style={{ width: "100%" }}
-                      onClick={this.updateHandler}
+                      type="submit"
                     >
                       Actualizar
                     </Button>

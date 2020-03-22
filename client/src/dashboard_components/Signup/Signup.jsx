@@ -59,8 +59,7 @@ class Signup extends Component {
         this.state.email.trim() === "" ||
         this.state.password.trim() === "" ||
         this.state.retypePassword.trim() === "" ||
-        (this.state.secretKey.trim() === "" &&
-          window.location.pathname === "/Regístrate")
+        this.state.secretKey.trim() === ""
       ) {
         this.setState({ requireError: "Todos los campos requeridos" });
       } else if (!validator.isEmail(this.state.email)) {

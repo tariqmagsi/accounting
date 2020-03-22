@@ -80,7 +80,8 @@ class EditInfoForm extends Component {
       });
   };
 
-  updateHandler = () => {
+  updateHandler = (e) => {
+    e.preventDefault()
     if (getFromStorage(process.env.REACT_APP_TOKEN_KEY)) {
       if (this.state.name.trim() === "" || this.state.email.trim() === "") {
         this.setState({ requireError: "Todos los campos requeridos" });
@@ -120,7 +121,7 @@ class EditInfoForm extends Component {
           </Alert>
         )}
 
-        <Form style={{ textAlign: "left" }}>
+        <Form style={{ textAlign: "left" }} onSubmit={this.updateHandler}>
           <Form.Group>
             <Form.Label>Nombre:</Form.Label>
             <Form.Control
@@ -152,7 +153,7 @@ class EditInfoForm extends Component {
                   width: "100%"
                 }}
                 align="center"
-                onClick={this.updateHandler}
+                type="submit"
               >
                 Actualizar
               </Button>

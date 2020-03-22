@@ -63,7 +63,8 @@ class Email extends Component {
   };
 
 
-  updateHandler = () => {
+  updateHandler = (e) => {
+    e.preventDefault()
     this.setState({isLoading: false}, () => {
       if (getFromStorage(process.env.REACT_APP_TOKEN_KEY)) {
         if (
@@ -137,7 +138,7 @@ class Email extends Component {
                 </Alert>
               )}
 
-              <Form style={{ textAlign: "left", width: "300px" }}>
+              <Form style={{ textAlign: "left", width: "300px" }} onSubmit={this.updateHandler}>
                 <Form.Group>
                   <Form.Label>Email:</Form.Label>
                   <Form.Control
@@ -163,8 +164,8 @@ class Email extends Component {
                   <Form.Group>
                     <Button
                       variant="danger"
+                      type="submit"
                       style={{ width: "100%" }}
-                      onClick={this.updateHandler}
                     >
                       Actualizar
                     </Button>

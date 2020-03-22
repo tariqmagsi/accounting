@@ -115,7 +115,8 @@ class ChangePasswordForm extends Component {
       );
   };
 
-  updateHandler = () => {
+  updateHandler = (e) => {
+    e.preventDefault()
     if (getFromStorage(process.env.REACT_APP_TOKEN_KEY)) {
       if (
         this.state.password.trim() === "" ||
@@ -196,7 +197,7 @@ class ChangePasswordForm extends Component {
           </Alert>
         )}
 
-        <Form style={{ textAlign: "left" }}>
+        <Form style={{ textAlign: "left" }} onSubmit={this.updateHandler}>
           <Form.Group>
             <Form.Label>Contraseña anterior:</Form.Label>
             <Form.Control
@@ -233,7 +234,7 @@ class ChangePasswordForm extends Component {
               <Button
                 variant="danger"
                 style={{ width: "100%" }}
-                onClick={this.updateHandler}
+                type="submit"
               >
                 Actualizar
               </Button>
