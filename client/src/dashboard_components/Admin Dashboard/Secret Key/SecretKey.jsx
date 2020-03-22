@@ -136,6 +136,7 @@ class SecretKey extends Component {
             secretKeyContainError: ""
           });
           if (this.state.secretKey !== this.state.retypesecretKey) {
+            flag=false
             this.setState({
               secretKeyEqualError: "Las nuevas claves secretas no son iguales",
               success: ""

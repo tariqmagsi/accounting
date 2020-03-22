@@ -80,8 +80,10 @@ class Signup extends Component {
             passwordContainError: ""
           });
           if (this.state.password !== this.state.retypePassword) {
+            flag = false
             this.setState({
-              passwordEqualError: "Las nuevas contraseñas no son iguales"
+              passwordEqualError: "Las nuevas contraseñas no son iguales",
+              success: ""
             });
           }
         } else if (
