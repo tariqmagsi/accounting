@@ -292,7 +292,6 @@ class Signup extends Component {
                   style={{ width: "300px" }}
                 />
               </Form.Group>
-              {window.location.pathname === "/Regístrate" && (
                 <Form.Group>
                   <Form.Label>Llave secreta:</Form.Label>
                   <Form.Control
@@ -304,8 +303,6 @@ class Signup extends Component {
                     style={{ width: "300px" }}
                   />
                 </Form.Group>
-              )}
-              {window.location.pathname !== "/Regístrate" && <br />}
               {this.state.isLoading ? (
                 <Form.Group>
                   <Button
