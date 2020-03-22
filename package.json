@@ -8,8 +8,8 @@
     "npm": "6.x"
   },
   "scripts": {
-    "client-install": "cd client && npm install",
-    "client-build": "cd client && npm run build",
+    "client-install": "cd client && env-cmd -f src/config/config.env npm install",
+    "client-build": "cd client && env-cmd -f src/config/config.env npm run build",
     "start": "env-cmd -f src/config/config.env node index",
     "server": "env-cmd -f src/config/config.env nodemon index",
     "client": "cd client && npm start",
