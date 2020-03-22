@@ -5,10 +5,12 @@
   "main": "index.js",
   "scripts": {
     "client-install": "cd client && npm install",
+    "client-build": "cd client && npm run build",
     "start": "env-cmd -f src/config/config.env node index",
     "server": "env-cmd -f src/config/config.env nodemon index",
     "client": "cd client && npm start",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run client-install && npm run client-build"
   },
   "author": "",
   "license": "ISC",
