@@ -23,8 +23,8 @@
     "validator": "^12.2.0"
   },
   "scripts": {
-    "start": "env-cmd -f src/config/config.env react-scripts start",
-    "build": "env-cmd -f src/config/config.env react-scripts build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "env-cmd -f src/config/config.env react-scripts test",
     "eject": "env-cmd -f src/config/config.env react-scripts eject"
   },
