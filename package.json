@@ -10,7 +10,7 @@
   "scripts": {
     "client-install": "cd client && env-cmd -f src/config/config.env npm install",
     "client-build": "cd client && env-cmd -f src/config/config.env npm run build",
-    "start": "env-cmd -f src/config/config.env node index",
+    "start": "node index",
     "server": "env-cmd -f src/config/config.env nodemon index",
     "client": "cd client && npm start",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
