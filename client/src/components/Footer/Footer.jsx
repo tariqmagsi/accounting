@@ -2,6 +2,7 @@ import React from "react";
 import logo from "../../images/Logo.png";
 import FeedbackForm from "../Feedback/Form";
 import { Phone } from "react-bootstrap-icons";
+import { Facebook } from "@material-ui/icons"
 
 const Footer = () => {
   return (
@@ -42,7 +43,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className="pa0 ma4 dib">
+        <div className="pa0 ma4 dib v-top">
           <strong>Celulares</strong>
           <br />
           <br />
@@ -61,7 +62,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="pa0 ma4 dib">
+        <div className="pa0 ma4 dib v-top">
           <strong>Habla a</strong>
           <br />
           <br />
@@ -98,6 +99,10 @@ const Footer = () => {
         <span style={{ color: "silver" }}>
           Contenido © 2020 Financial Accounting Services, Inc.
         </span>
+        <br/>
+        <a href="https://www.facebook.com/Consultoria-contable-tributario-bermudez-SAC-100667508250436/" target="_blank">
+          <Facebook style={{color: "silver"}} className="fb"/>
+        </a>
         <br />
         <br />
       </div>

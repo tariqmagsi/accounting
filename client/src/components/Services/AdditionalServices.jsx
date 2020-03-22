@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
 import Loading from 'react-fullscreen-loading';
+import male from "../../images/male.png"
+import female from "../../images/female.png"
 
 class AdditionalServices extends Component {
 
@@ -81,7 +83,7 @@ class AdditionalServices extends Component {
             como también preparación de perfiles de Linkdein.
             <br />
             <br />
-            Foto()
+            <img src={male} alt="Maxwell" style={{height: "300px"}}/>
             <br />
             <br />
             Maxwell es un joven profesional dispuesto a brindarte el mejor servicio
@@ -126,7 +128,7 @@ class AdditionalServices extends Component {
             especialmente en Python.
             <br />
             <br />
-            Foto()
+            <img src={female} alt="María Luz tiene" style={{height: "300px"}}/>
             <br />
             <br />
             María Luz es una joven profesional dispuesta a enseñarte el inglés en

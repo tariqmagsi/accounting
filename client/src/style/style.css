@@ -261,6 +261,10 @@ Note: Beware of modifying this element as it can break the animations - you shou
   color: rgb(15, 131, 131);
 }
 
+.fb:hover {
+  color: #3b5998 !important;
+}
+
 table th {
   font-size: 0.9rem;
 
@@ -691,5 +695,10 @@ div.dataTables_wrapper span.select-item {
 @media screen and (max-width: 700px) {
   .width-input {
     width: 100% !important;
+  }
+}
+@media screen and (max-width: 1125px) {
+  .image {
+    display: block !important;
   }
 }

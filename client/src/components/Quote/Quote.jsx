@@ -34,7 +34,7 @@ class Quote extends Component {
             opacity: 0.7,
             color: "black",
             fontSize: "20px",
-            marginTop: "-21px"
+            marginTop: "-5px"
           }}
         >
           <Card.Body>

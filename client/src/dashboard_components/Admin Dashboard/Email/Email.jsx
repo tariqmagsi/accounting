@@ -43,12 +43,12 @@ class Email extends Component {
           if (json.success) {
             this.setState({
               success: "Correo electrónico cambiado correctamente",
-              error: ""
+              error: "", isLoading: true
             });
           } else {
             this.setState({
               error: "Algo salió mal",
-              success: "",
+              success: "", isLoading: true
             });
           }
         });
@@ -64,22 +64,24 @@ class Email extends Component {
 
 
   updateHandler = () => {
-    if (getFromStorage(process.env.REACT_APP_TOKEN_KEY)) {
-      if (
-        this.state.email.trim() === "" ||
-        this.state.password.trim() === ""
-      ) {
-        this.setState({ requireError: "Todos los campos requeridos" });
-      } else {
-        if (validator.isEmail(this.state.email)) {
-            this.updatePostRequest()
+    this.setState({isLoading: false}, () => {
+      if (getFromStorage(process.env.REACT_APP_TOKEN_KEY)) {
+        if (
+          this.state.email.trim() === "" ||
+          this.state.password.trim() === ""
+        ) {
+          this.setState({ requireError: "Todos los campos requeridos", isLoading: true });
         } else {
-            this.setState({ requireError: "Correo electrónico no válido"})
+          if (validator.isEmail(this.state.email)) {
+              this.updatePostRequest()
+          } else {
+              this.setState({ requireError: "Correo electrónico no válido", isLoading: true})
+          }
         }
+      } else {
+        this.props.history.push("/Login");
       }
-    } else {
-      this.props.history.push("/Login");
-    }
+    })
   };
 
   getEmail = () => {

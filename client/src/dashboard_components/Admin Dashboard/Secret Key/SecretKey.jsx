@@ -57,7 +57,6 @@ class SecretKey extends Component {
           } else {
             this.setState({
               error: "Algo salió mal",
-              success: "",
               oldPassError: "",
               success: ""
             });
@@ -67,7 +66,6 @@ class SecretKey extends Component {
       .catch(err => {
         this.setState({
           error: "Algo salió mal",
-          success: "",
           oldPassError: "",
           isLoading: true,
           success: ""

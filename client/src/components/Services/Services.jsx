@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
-import services from "../../images/services.jpg";
+import services from "../../images/tax.jpg";
 import financial from "../../images/financial.jpeg";
 import audit from "../../images/tax.jpg";
 import reports from "../../images/reports.jpg";
@@ -73,13 +73,6 @@ class Services extends Component {
             <br />
             <section style={{ textAlign: "center" }}>
               <img
-                src={services}
-                alt="about"
-                style={{ marginLeft: "10px", marginRight: "30px" }}
-              />
-              <br />
-              <br />
-              <img
                 src={financial}
                 alt="financial"
                 style={{
@@ -88,6 +81,8 @@ class Services extends Component {
                   marginRight: "30px"
                 }}
               />
+              <br style={{display: "none"}} className="image"/>
+              <br style={{display: "none"}} className="image"/>
               <img
                 src={audit}
                 alt="audit"
@@ -97,6 +92,8 @@ class Services extends Component {
                   marginRight: "30px"
                 }}
               />
+              <br style={{display: "none"}} className="image"/>
+              <br style={{display: "none"}} className="image"/>
               <img
                 src={reports}
                 alt="reports"

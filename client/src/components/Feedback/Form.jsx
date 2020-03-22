@@ -44,7 +44,7 @@ export default class FeedbackForm extends Component {
 
   render() {
     return (
-      <div style={{ padding: "100px" }}>
+      <div style={{ padding: "30px" }}>
         <Card style={{ background: "rgba(255,255,255,0.8)" }}>
           <Card.Body>
             <React.Fragment>

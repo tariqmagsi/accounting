@@ -51,7 +51,8 @@ class Signup extends Component {
     return true;
   };
 
-  signupHandler = () => {
+  signupHandler = (e) => {
+    e.preventDefault()
     if (!getFromStorage(process.env.REACT_APP_TOKEN_KEY)) {
       if (
         this.state.name.trim() === "" ||
@@ -248,13 +249,13 @@ class Signup extends Component {
 
             <Form style={{ textAlign: "left" }}>
               <Form.Group>
-                <Form.Label>Name:</Form.Label>
+                <Form.Label>Nombre:</Form.Label>
                 <Form.Control
                   type="text"
                   name="name"
                   value={this.state.name}
                   onChange={this.whenChangeHanlder}
-                  placeholder="Name*"
+                  placeholder="Nombre*"
                   style={{ width: "300px" }}
                 />
               </Form.Group>
@@ -276,7 +277,7 @@ class Signup extends Component {
                   name="password"
                   value={this.state.password}
                   onChange={this.whenChangeHanlder}
-                  placeholder="Password*"
+                  placeholder="Contraseña*"
                   style={{ width: "300px" }}
                 />
               </Form.Group>
@@ -287,7 +288,7 @@ class Signup extends Component {
                   name="retypePassword"
                   value={this.state.retypePassword}
                   onChange={this.whenChangeHanlder}
-                  placeholder="Retype Password*"
+                  placeholder="Vuelva a escribir la contraseña*"
                   style={{ width: "300px" }}
                 />
               </Form.Group>
@@ -299,7 +300,7 @@ class Signup extends Component {
                     name="secretKey"
                     value={this.state.secretKey}
                     onChange={this.whenChangeHanlder}
-                    placeholder="Secret Key*"
+                    placeholder="Llave secreta*"
                     style={{ width: "300px" }}
                   />
                 </Form.Group>
@@ -310,7 +311,8 @@ class Signup extends Component {
                   <Button
                     variant="danger"
                     style={{ width: "300px" }}
-                    onClick={this.signupHandler}
+                    type="submit"
+                    onSubmit={this.signupHandler}
                   >
                     Regístrate
                   </Button>

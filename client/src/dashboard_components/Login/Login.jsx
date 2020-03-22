@@ -22,6 +22,7 @@ class Login extends Component {
   };
 
   loginHandler = e => {
+    e.preventDefault()
     if (!getFromStorage(process.env.REACT_APP_TOKEN_KEY)) {
       if (this.state.email.trim() === "" && this.state.password.trim() === "") {
         this.setState({ requireError: "Todos los campos requeridos" });
@@ -138,7 +139,7 @@ class Login extends Component {
                   name="password"
                   value={this.state.password}
                   onChange={this.whenChangeHandler}
-                  placeholder="Password"
+                  placeholder="Contraseña"
                   style={{ width: "300px" }}
                 />
               </Form.Group>
@@ -148,7 +149,8 @@ class Login extends Component {
                   <Button
                     variant="success"
                     style={{ width: "300px" }}
-                    onClick={this.loginHandler}
+                    type="submit"
+                    onSubmit={this.loginHandler}
                   >
                     Iniciar sesión
                   </Button>
