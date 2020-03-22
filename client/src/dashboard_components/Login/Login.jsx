@@ -120,7 +120,7 @@ class Login extends Component {
                 {this.state.requireError}
               </Alert>
             )}
-            <Form style={{ textAlign: "left" }}>
+            <Form style={{ textAlign: "left" }} onSubmit={this.loginHandler}>
               <Form.Group>
                 <Form.Label>Email:</Form.Label>
                 <Form.Control
@@ -150,7 +150,6 @@ class Login extends Component {
                     variant="success"
                     style={{ width: "300px" }}
                     type="submit"
-                    onSubmit={this.loginHandler}
                   >
                     Iniciar sesión
                   </Button>

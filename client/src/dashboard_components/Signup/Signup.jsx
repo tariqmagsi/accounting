@@ -247,7 +247,7 @@ class Signup extends Component {
               </Alert>
             )}
 
-            <Form style={{ textAlign: "left" }}>
+            <Form style={{ textAlign: "left" }}  onSubmit={this.signupHandler}>
               <Form.Group>
                 <Form.Label>Nombre:</Form.Label>
                 <Form.Control
@@ -312,7 +312,6 @@ class Signup extends Component {
                     variant="danger"
                     style={{ width: "300px" }}
                     type="submit"
-                    onSubmit={this.signupHandler}
                   >
                     Regístrate
                   </Button>
