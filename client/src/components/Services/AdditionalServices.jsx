@@ -4,6 +4,7 @@ import Navbar from "../Navbar/Navbar";
 import Loading from 'react-fullscreen-loading';
 import male from "../../images/male.png"
 import female from "../../images/female.png"
+import ScrollAnimation from 'react-animate-on-scroll';
 
 class AdditionalServices extends Component {
 
@@ -18,33 +19,36 @@ class AdditionalServices extends Component {
     if (this.state.flag) {
       return (
         <div>
+          <Navbar />
           <div className="services">
-            <Navbar />
             <div
               className="main-home"
               style={{
                 marginLeft: "50px",
-                color: "white",
+                color: "rgb(15, 131, 131)",
                 marginRight: "50px"
               }}
             >
-              <h1 style={{ fontWeight: "bold", marginBottom: "10px" }}>
+              <ScrollAnimation animateIn="fadeInDown" animateOnce={true}>
+              <h1 style={{ fontWeight: "bold", marginBottom: "10px", color: "rgb(15, 131, 131)" }}>
                 Servicios Adicionales
               </h1>
-              <h5>Brindamos los mejores servicios</h5>
+              <h3>Brindamos los mejores servicios</h3>
+              </ScrollAnimation>
             </div>
           </div>
-          <div style={{ padding: "50px" }} className="section">
-            <h1 style={{ fontWeight: "bolder" }}>Servicios de inglés en línea</h1>
+          <ScrollAnimation animateIn="fadeInLeft" animateOnce={true}>
+          <div style={{ padding: "50px", paddingTop: "100px", paddingBottom: "150px" }}>
+            <h1 style={{ color: "rgb(15, 131, 131)" }}>Servicios de inglés en línea</h1>
             Somos un grupo de profesionales nativos, y no nativos especializados en
             la enseñanza y traducción de inglés.
             <br />
             <br />
-            <strong>Brindamos servicios de Traducción de inglés:</strong>
+            <strong style={{ color: "rgb(15, 131, 131)" }}>Brindamos servicios de Traducción de inglés:</strong>
             <br /> CVs, Documentos, Contratos, Tesis, Artículos científicos.
             <br />
             <br />
-            <strong>Interpretaciones:</strong>
+            <strong style={{ color: "rgb(15, 131, 131)" }}>Interpretaciones:</strong>
             <br /> Spanish-English o viceversa English-Spanish. Cursos de Ingles
             online usamos Skype como plataforma a todo nivel: Nivel
             Básico-Intermedio- Avanzado, preparación para presentación de Posters y
@@ -52,7 +56,7 @@ class AdditionalServices extends Component {
             estudiantes que quieran estudiar en el extranjero.
             <br />
             <br />
-            <strong>Acerca de Nosotros:</strong>
+            <strong style={{ color: "rgb(15, 131, 131)" }}>Quienes Somos Nosotros:</strong>
             <br />
             R. Maxwell Wheeless, inglés nativo hablante, estudiante de la escuela de
             post-grado in Cybersecurity (Seguridad Cibernética) en la Universidad de
@@ -141,11 +145,12 @@ class AdditionalServices extends Component {
             nativa.
             <br />
           </div>
+          </ScrollAnimation>
           <Footer />
         </div>
       );
     } else {
-      return <Loading loading background="#eee" loaderColor="rgba(0,0,0,0.5)" />;
+      return <Loading loading background="#eee" loaderColor="rgb(15,131,131)" />;
     }
   }
 };

@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
-import { Card } from "react-bootstrap";
 import Loading from 'react-fullscreen-loading';
+import { Card } from "react-bootstrap";
+import ScrollAnimation from 'react-animate-on-scroll';
 
 export default class Feedback extends Component {
   state = {
@@ -37,57 +38,64 @@ export default class Feedback extends Component {
     if (this.state.flag){
       return (
         <div>
+           <Navbar />
           <div className="feedback">
-            <Navbar />
-
             <div
               className="main-home"
               style={{
                 marginLeft: "50px",
-                color: "white",
+                color: "rgb(15, 131, 131)",
                 marginRight: "50px"
               }}
             >
-              <h1 style={{ fontWeight: "bold" }}>Comentarios</h1>
+              <ScrollAnimation animateIn="fadeInDown" animateOnce={true}>
+              <h1 style={{ fontWeight: "bold", color: "rgb(15, 131, 131)" }}>Comentarios</h1>
+              </ScrollAnimation>
               <br />
               <br />
             </div>
           </div>
 
-          {
-            this.state.error === "" ? 
-              <div className="section">
-              <br />
-              <br />
-
-              <div style={{ marginLeft: "50px", marginRight: "50px" }}>
-                {this.state.feedbacks.map((feedback, index) => (
-                  <React.Fragment key={index}>
-                    <Card>
-                      <Card.Body>
-                        <strong>{feedback.name}</strong>
-                        <br />
-                        <br />
-                        <div>{feedback.feedback}</div>
-                      </Card.Body>
-                    </Card>
-                    <br />
-                  </React.Fragment>
-                ))}
-              </div>
-              
-
-              <br />
-              <br />
+        
+            <div>
+            
+            <div style={{
+                color: "rgb(15,131,131)", 
+                textAlign:"center",
+                backgroundColor: "rgba(15, 131, 131, 0.7)",
+                paddingTop: "100px",
+                paddingBottom: "100px",
+                paddingRight: "50px",
+                paddingLeft: "50px"
+              }}  
+            >
+              <ScrollAnimation animateIn="fadeInUp" animateOnce={true}>
+              {this.state.feedbacks.map((feedback, index) => (
+                <div 
+                  key={index} 
+                >
+                  <Card>
+                    <Card.Body>
+                      <p>
+                        “{feedback.feedback}”<br/>
+                        <span style={{textAlign: "right", fontWeight: "bold"}}>- {feedback.name}</span>
+                      </p>
+                    </Card.Body>
+                  </Card>
+                  <br/>
+                  <br/>
+                </div>
+              ))}
+              {this.state.feedbacks.length === 0 && <h1 style={{textAlign: "center", color: "white"}}>No Hay Comentarios</h1>}
+              </ScrollAnimation>
             </div>
-            :
-            <h1 style={{textAlign:"center"}}>{this.state.error}</h1>
-          }
+          </div>
+           
           <Footer />
         </div>
       );
     } else {
-      return <Loading loading background="#eee" loaderColor="rgba(0,0,0,0.5)" />
+      return <Loading loading background="#eee" loaderColor="rgb(15,131,131)" />
     }
   }
 }

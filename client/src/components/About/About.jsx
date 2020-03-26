@@ -3,6 +3,7 @@ import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import team from "../../images/team.jpg";
 import Loading from 'react-fullscreen-loading';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 class About extends Component {
 
@@ -21,26 +22,29 @@ class About extends Component {
           <div
             className="about"
             style={{
-              paddingTop: "140px",
+              paddingTop: "100px",
               paddingLeft: "50px",
               paddingRight: "50px",
               marginTop: "-15px"
             }}
           >
-            <div style={{ color: "white" }}>
+            <ScrollAnimation animateIn="fadeInDown" animateOnce={true}>
+            <div style={{ color: "rgb(15, 131, 131)" }}>
               <h1 style={{ fontWeight: "bolder", fontSize: "70px" }}>
                 Sobre nosotros
               </h1>
 
-              <h3 style={{ fontWeight: "bolder", fontSize: "50px" }}>
+              <h3 style={{  fontSize: "50px" }}>
                 Conozca a Las Personas
                 <br /> Que Lo Atienden.
               </h3>
             </div>
+            </ScrollAnimation>
           </div>
-          <div style={{ padding: "50px" }} className="section">
-            <h1 style={{ fontWeight: "bolder" }}>
-              Consultoria Contable Tributario Bermúdez Sac
+          <ScrollAnimation animateIn="fadeInRight" animateOnce={true}>
+          <div style={{ padding: "50px", marginBottom: "100px", marginTop: "50px" }}>
+            <h1 style={{ color: "rgb(15, 131, 131)" }}>
+              Consultoria Contable Tributario Bermúdez SAC
             </h1>
             <br />
             <img
@@ -49,37 +53,35 @@ class About extends Component {
               style={{ width: "500px", float: "right", marginLeft: "10px" }}
             />
             <section>
-              Somos Contadores especialistas tributarios, Laborales, Facturación
-              Electrónica, contamos con amplia experiencia ofrecemos los servicios
-              en el área contable, Teneduría de libros contables, contabilidad
-              Computarizada , PLE -Contabilidad completa hasta la emisión de los
-              EE.FF anuales, semestrales, mensuales, según la necesidad de las
-              empresas, amplia experiencia en Homologaciones ofrecemos Asesoría
-              tributaria, Declaraciones mensuales y anuales de SUNAT; Planilla
-              electrónica, Plame y el T-Registro.-Asesoramiento en impuestos,
-              evitamos contingencias tributarias, evitamos multas.
+              Somos contadores especialistas y con amplia experiencia en Tributación, 
+              Laboral, Libros Contables Electrónicos (PLE), Contabilidad computarizada. Además, 
+              ofrecemos servicios en facturación electrónica, elaboración de estados financieros 
+              (mensuales, semestrales y anuales) según la necesidad de las empresas, amplia experiencia 
+              en la preparación de homologaciones. Asimismo, brindamos servicios de auditoría, fiscalizaciones,
+              cartas inductivas SUNAT, SUNAFIL, MINTRA y asesoramientos permanentes tributarios brindamos el 
+              mejor plan de contingencia evitando multas.
               <br />
               <br />
-              Auditorias, Fiscalizaciones , Cartas Inductivas -SUNAT
+              También, brindamos declaraciones PDT ( Mensuales Y Anuales), planilla electrónica, 
+              PLAME y T-Registro. Declaración jurada anual de impuesto a la renta de personas jurídicas y 
+              personas naturales, empresas transnacionales, sucursales, convenios internacionales, asesoría 
+              financiera como sistemas de información que se adecuan perfectamente a las necesidades 
+              de nuestro clientes. 
               <br />
               <br />
-              Declaración jurada anual de personas jurídicas y personas naturales ,
-              Empresas Trasnacionales, Sucursales , convenios Internacionales,
-              Asesoría financiera: sistemas de información que se adecuan
-              perfectamente a las necesidades de nuestros clientes, , analizamos sus
-              EE.FF y preparamos los documentos necesarios para poder adquirir un
-              crédito bancario, mejorando el aspecto financiero. Constitución de
-              empresas, Contratos diversos , Servicios de auditoria: Fiscalizaciones
-              internas y asesorías de empresas que no son nuestros clientes.
+              Analizamos sus EE.FF y preparamos los documentos necesarios para poder adquirir un crédito bancario, 
+              mejorando el aspecto financiero, constitución de empresas, contratos diversos, 
+              servicios de auditoria como fiscalizaciones internas y balances mensuales.
             </section>
           </div>
+          </ScrollAnimation>
           <div style={{ marginTop: "-21px" }}>
             <Footer />
           </div>
         </div>
       );
     } else {
-      return <Loading loading background="#eee" loaderColor="rgba(0,0,0,0.5)" />
+      return <Loading loading background="#eee" loaderColor="rgb(15,131,131)" />
     }
   }
 };

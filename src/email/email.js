@@ -36,14 +36,14 @@ const toClient = async (date, name, emailAdmin, passwordAdmin, email) => {
     let info = await transporter.sendMail({
       from: emailAdmin,
       to: email,
-      subject: `Consultoria Contable Tributario Bermúdez Sac`,
+      subject: `Consultoria Contable Tributario Bermúdez SAC`,
       html: `<h1>Confirmación de la cita</h1><p>Estimado ${name}, ha solicitado una cita, por lo que le informamos con entusiasmo que su cita está confirmada y la fecha de la cita es la siguiente: <br/> <br/>
             <strong> Fecha:  ${date} </strong>
             <br/> <br/> <strong>Contacto:</strong> <br/> (51) 1-562-0663 <br/>
             (51) 1-562-0657 <br/> 986 617 069 <br/>
             991 696 527 <br/> <br/> <strong>Dirección:</strong> <br/> Av Elmer Faucett 303 - Oficina 203 - San Miguel-Lima. <br/> <br/>
             Saludos,<br/>
-            <strong> Consultoria Contable<br/> Tributario Bermúdez Sac
+            <strong> Consultoria Contable<br/> Tributario Bermúdez SAC
             </strong></p>`
     });
 
@@ -53,4 +53,34 @@ const toClient = async (date, name, emailAdmin, passwordAdmin, email) => {
     console.log("Not Sent");
   }
 };
-module.exports = { toAdmin, toClient };
+const resetPassword = async (name, emailAdmin, passwordAdmin, email, token) => {
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+
+    auth: {
+      user: emailAdmin,
+      pass: passwordAdmin
+    }
+  });
+  try {
+    let info = await transporter.sendMail({
+      from: emailAdmin,
+      to: email,
+      subject: `Consultoria Contable Tributario Bermúdez SAC`,
+      html: `<h1>Restablecer la contraseña</h1><p>Estimado ${name}, haga clic en el siguiente enlace para restablecer la contraseña: <br/>
+            https://localhost:3000/reset/password/${token}
+            <br/> <br/> <strong>Contacto:</strong> <br/> (51) 1-562-0663 <br/>
+            (51) 1-562-0657 <br/> 986 617 069 <br/>
+            991 696 527 <br/> <br/> <strong>Dirección:</strong> <br/> Av Elmer Faucett 303 - Oficina 203 - San Miguel-Lima. <br/> <br/>
+            Saludos,<br/>
+            <strong> Consultoria Contable<br/> Tributario Bermúdez SAC
+            </strong></p>`
+    });
+
+    console.log("Message sent: %s", info.messageId);
+    console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+  } catch (err) {
+    console.log("Not Sent");
+  }
+};
+module.exports = { toAdmin, toClient, resetPassword };

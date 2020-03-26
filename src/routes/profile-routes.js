@@ -1,7 +1,9 @@
 const express = require("express");
 const Profiles = require("../modals/profiles");
+const Email = require("../modals/email")
 const routes = express.Router();
 const auth = require("../middleware/auth");
+const {resetPassword} = require("../email/email")
 
 //Create new Profile
 routes.post("/create/profiles", async (req, res) => {
@@ -99,5 +101,23 @@ routes.post("/profiles/authenticate", auth, async (req, res) => {
     res.status(400).send({ success: false, e });
   }
 });
+
+//Reset Password
+routes.post("/reset/password", async (req, res) => {
+  try {
+    const profile = await Profiles.findOne({email: req.body.email})
+    const email = await Email.findOne({})
+    const token = await profile.generateAuthToken();
+
+    if(!profile) {
+      res.status(404).send({success: false})
+    } else {
+      resetPassword(profile.name,email.email, email.password, req.body.email, token)
+      res.status(200).send({ success: true });
+    }
+  } catch (e) {
+    res.status(400).send({ success: false, e });
+  }
+})
 
 module.exports = routes;

@@ -44,8 +44,10 @@ export default class FeedbackForm extends Component {
 
   render() {
     return (
-      <div style={{ padding: "30px" }}>
-        <Card style={{ background: "rgba(255,255,255,0.8)" }}>
+      <div style={{ padding: "30px", marginTop: "120px", color: "silver" }}>
+        <h1 style={{textAlign:"center"}}>Realimentación</h1>
+        <br/>
+        <Card style={{ background: "rgba(0,0,0,0.7)" }}>
           <Card.Body>
             <React.Fragment>
             {(this.state.requireError !== "" || this.state.error !== "") && (

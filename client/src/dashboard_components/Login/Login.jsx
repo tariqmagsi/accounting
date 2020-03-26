@@ -5,6 +5,7 @@ import "tachyons";
 import { Alert } from "react-bootstrap";
 import { getFromStorage, setInStorage } from "../../utils/storage";
 import { CircularProgress } from "@material-ui/core";
+import EmailDialog from "./EmailDialog"
 
 class Login extends Component {
   state = {
@@ -13,7 +14,10 @@ class Login extends Component {
     requireError: "",
     isLoggedIn: true,
     error: "",
-    flag: true
+    flag: true,
+    open:false,
+    isActive: false,
+    isError: false
   };
 
   whenChangeHandler = e => {
@@ -88,6 +92,8 @@ class Login extends Component {
       });
   };
 
+  
+
   componentDidMount() {
     if (getFromStorage(process.env.REACT_APP_TOKEN_KEY)) {
       this.authenticateUser();
@@ -143,6 +149,11 @@ class Login extends Component {
                   style={{ width: "300px" }}
                 />
               </Form.Group>
+              <p style={{cursor: "pointer"}} 
+                onClick={()=>{
+                  this.setState({open: true})
+                }}
+              >Forgot Password?</p>
               <br />
               {this.state.flag ? (
                 <Form.Group>
@@ -173,6 +184,10 @@ class Login extends Component {
               </Form.Group>
             </Form>
           </section>
+          <EmailDialog
+            show={this.state.open}
+            onHide={() => this.setState({ open: false })}
+          />
         </div>
       );
     } else {

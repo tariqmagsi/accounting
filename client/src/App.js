@@ -19,6 +19,9 @@ import Appointment from "./dashboard_components/Admin Dashboard/Appointment/Appo
 import Email from "./dashboard_components/Admin Dashboard/Email/Email";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
+import 'react-awesome-slider/dist/styles.css';
+import "animate.css/animate.min.css";
+import Reset from "./dashboard_components/Reset Password/Reset";
 
 class App extends Component {
   createSecretKey = () => {
@@ -91,32 +94,35 @@ class App extends Component {
   }
   render() {
     return (
-      <BrowserRouter>
-        <Switch>
-          <Route path="/" component={Home} exact />
-          <Route path="/acerca_da" component={About} exact />
-          <Route path="/servicios" component={Services} exact />
-          <Route
-            path="/servicios_adicionales"
-            component={AdditionalServices}
-            exact
-          />
-          <Route path="/registro" component={Register} exact />
-          <Route path="/comentarios" component={Feedback} exact />
+      <div style={{overflowX: "hidden"}}>
+        <BrowserRouter >
+          <Switch>
+              <Route path="/" component={Home} exact />
+              <Route path="/quienes_somos" component={About} exact />
+              <Route path="/servicios" component={Services} exact />
+              <Route
+                path="/servicios_adicionales"
+                component={AdditionalServices}
+                exact
+              />
+              <Route path="/registro" component={Register} exact />
+              <Route path="/comentarios" component={Feedback} exact />
 
-          {/* Dashboard Start Routes */}
-          <Route path="/Login" component={Login} exact />
-          <Route path="/Regístrate" component={Signup} exact />
-          <Route path="/Tablero" component={Dashboard} exact />
-          <Route path="/Perfil" component={Profile} exact />
-          <Route path="/Llave" component={SecretKey} exact />
-          <Route path="/Equipo" component={Appointment} exact />
-          <Route path="/Email" component={Email} exact />
-          {/*Dashboard End Routes*/}
+              {/* Dashboard Start Routes */}
+              <Route path="/Login" component={Login} exact />
+              <Route path="/Regístrate" component={Signup} exact />
+              <Route path="/Tablero" component={Dashboard} exact />
+              <Route path="/Perfil" component={Profile} exact />
+              <Route path="/Llave" component={SecretKey} exact />
+              <Route path="/Equipo" component={Appointment} exact />
+              <Route path="/Email" component={Email} exact />
+              <Route path="/reset/password" component={Reset} />
+              {/*Dashboard End Routes*/}
 
-          <Route path="/" component={NotFound} />
-        </Switch>
-      </BrowserRouter>
+              <Route path="/" component={NotFound} />
+          </Switch>
+        </BrowserRouter>
+      </div>
     );
   }
 }

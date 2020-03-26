@@ -12,7 +12,7 @@ class Navbar extends Component {
           }}
           align="center"
         >
-          Consultoria Contable Tributario Bermúdez Sac
+          Consultoria Contable Tributario Bermúdez SAC
         </h4>
       </div>
     );

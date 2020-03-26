@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
-import services from "../../images/tax.jpg";
 import financial from "../../images/financial.jpeg";
 import audit from "../../images/tax.jpg";
 import reports from "../../images/reports.jpg";
 import { Button } from "react-bootstrap";
 import { withRouter } from "react-router";
 import Loading from 'react-fullscreen-loading';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 class Services extends Component {
 
@@ -22,25 +22,34 @@ class Services extends Component {
     if (this.state.flag) {
       return (
         <div>
+          <Navbar />
           <div className="services">
-            <Navbar />
             <div
               className="main-home"
               style={{
                 marginLeft: "50px",
-                color: "white",
+                color: "rgb(15, 131, 131)",
                 marginRight: "50px"
               }}
             >
-              <h1 style={{ fontWeight: "bold", marginBottom: "10px" }}>
+              <ScrollAnimation animateIn="fadeInDown" animateOnce={true}>
+              <h1 style={{ fontWeight: "bold", marginBottom: "10px", color: "rgb(15, 131, 131)", }}>
                 Servicios
               </h1>
-              <h5>Brindamos los mejores servicios</h5>
+              <h3>Brindamos los mejores servicios</h3>
+              </ScrollAnimation>
             </div>
           </div>
-          <div style={{ padding: "50px" }} className="section">
-            <h1 style={{ fontWeight: "bolder" }}>
-              Consultoria Contable Tributario Bermúdez Sac
+         
+          <div style={{ 
+                padding: "50px", 
+                paddingTop: "100px",
+                paddingBottom: "100px"
+              }}
+            >
+            <ScrollAnimation animateIn="fadeInLeft" animateOnce={true}>
+            <h1 style={{ color: "rgb(15, 131, 131)" }}>
+              Consultoria Contable Tributario Bermúdez SAC
             </h1>
             <br />
 
@@ -70,6 +79,7 @@ class Services extends Component {
               Español a nivel Internacional . Nos encontramos en Av Elmer Faucett
               N 303 Oficina N203 Urbanización Maranga -San Miguel
             </section>
+            </ScrollAnimation>
             <br />
             <section style={{ textAlign: "center" }}>
               <img
@@ -119,7 +129,7 @@ class Services extends Component {
       );
     }
     else {
-      return <Loading loading background="#eee" loaderColor="rgba(0,0,0,0.5)" />;
+      return <Loading loading background="#eee" loaderColor="rgb(15,131,131)" />;
     }
   }
 }
