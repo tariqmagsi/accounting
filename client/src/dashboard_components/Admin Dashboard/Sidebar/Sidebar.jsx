@@ -6,7 +6,8 @@ import {
   ExitToApp,
   Dashboard,
   Lock,
-  Email
+  Email,
+  Image
 } from "@material-ui/icons";
 import { Link, withRouter } from "react-router-dom";
 import { removeFromStorage, getFromStorage } from "../../../utils/storage";
@@ -75,6 +76,15 @@ class Sidebar extends Component {
             <li>
               <QuestionAnswer />
               <span> Equipo</span>
+            </li>
+          </Link>
+          <Link
+            to="/Imágenes"
+            style={{ textDecoration: "none", color: "white" }}
+          >
+            <li>
+              <Image />
+              <span> Imágenes</span>
             </li>
           </Link>
           <Link

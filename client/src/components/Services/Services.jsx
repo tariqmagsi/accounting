@@ -113,15 +113,6 @@ class Services extends Component {
                   marginRight: "30px"
                 }}
               />
-              <br />
-              <br />
-              <br />
-              <Button
-                variant="success"
-                onClick={() => this.props.history.push("/servicios_adicionales")}
-              >
-                Servicios Adicionales{" "}
-              </Button>
             </section>
           </div>
           <Footer />

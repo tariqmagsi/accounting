@@ -41,7 +41,7 @@ class About extends Component {
             </div>
             </ScrollAnimation>
           </div>
-          <ScrollAnimation animateIn="fadeInRight" animateOnce={true}>
+          <ScrollAnimation animateIn="fadeInLeft" animateOnce={true}>
           <div style={{ padding: "50px", marginBottom: "100px", marginTop: "50px" }}>
             <h1 style={{ color: "rgb(15, 131, 131)" }}>
               Consultoria Contable Tributario Bermúdez SAC

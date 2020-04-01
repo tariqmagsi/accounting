@@ -15,6 +15,7 @@ import Dashboard from "./dashboard_components/Admin Dashboard/Dashboard/Dashboar
 import Profile from "./dashboard_components/Admin Dashboard/Profile/Profile";
 import Login from "./dashboard_components/Login/Login";
 import SecretKey from "./dashboard_components/Admin Dashboard/Secret Key/SecretKey";
+import Images from "./dashboard_components/Admin Dashboard/Image/Image";
 import Appointment from "./dashboard_components/Admin Dashboard/Appointment/Appointment";
 import Email from "./dashboard_components/Admin Dashboard/Email/Email";
 import "@fortawesome/fontawesome-free/css/all.min.css";
@@ -22,6 +23,9 @@ import "bootstrap-css-only/css/bootstrap.min.css";
 import 'react-awesome-slider/dist/styles.css';
 import "animate.css/animate.min.css";
 import Reset from "./dashboard_components/Reset Password/Reset";
+import EmploymentAdvice from "./components/ServiceParts/EmploymentAdvice";
+import TaxAdvice from "./components/ServiceParts/TaxAdvice";
+import FAAdvice from "./components/ServiceParts/FAAdvice";
 
 class App extends Component {
   createSecretKey = () => {
@@ -101,16 +105,20 @@ class App extends Component {
               <Route path="/quienes_somos" component={About} exact />
               <Route path="/servicios" component={Services} exact />
               <Route
-                path="/servicios_adicionales"
+                path="/servicios/servicios_de_traducción_de_inglés"
                 component={AdditionalServices}
                 exact
               />
+              <Route path="/servicios/asesoría_laboral" component={EmploymentAdvice} exact />
+              <Route path="/servicios/asesoría_tributaria" component={TaxAdvice} exact />
+              <Route path="/servicios/asesoría_contable_financiera" component={FAAdvice} exact />
               <Route path="/registro" component={Register} exact />
               <Route path="/comentarios" component={Feedback} exact />
 
               {/* Dashboard Start Routes */}
               <Route path="/Login" component={Login} exact />
               <Route path="/Regístrate" component={Signup} exact />
+              <Route path="/Imágenes" component={Images} exact />
               <Route path="/Tablero" component={Dashboard} exact />
               <Route path="/Perfil" component={Profile} exact />
               <Route path="/Llave" component={SecretKey} exact />

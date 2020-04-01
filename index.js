@@ -5,6 +5,7 @@ const keyRoutes = require("./src/routes/key-routes");
 const appointmentRoutes = require("./src/routes/appointment-routes");
 const feedbackRoutes = require("./src/routes/feedback-routes");
 const emailRoutes = require("./src/routes/email-routes");
+const imageRoutes = require("./src/routes/image-routes");
 const path = require("path")
 require("./src/db/mongoose");
 
@@ -13,8 +14,11 @@ app.use(profileRoutes);
 app.use(keyRoutes);
 app.use(appointmentRoutes);
 app.use(feedbackRoutes);
-app.use(emailRoutes)
+app.use(emailRoutes);
+app.use(imageRoutes);
+
 app.use(express.static(__dirname + "/public"));
+
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));

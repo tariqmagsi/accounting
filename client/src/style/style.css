@@ -7,7 +7,44 @@
   padding: 0;
   font-family: "Roboto", Arial, Tahoma, sans-serif
 }
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+.dropdown .dropbtn {
+  font-size: 17px;    
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+/* Style the subnav content - positioned absolute */
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: red;
+  width: 100%;
+  z-index: 1;
+}
 
+.dropdown-content {
+  position: absolute;
+  background-color: rgba(15, 131, 131, 0.8);
+  z-index: 1;
+  margin-left: 430px;
+  margin-top: 16px;
+}
+.dropdown-content a {
+ display: none;
+ padding: 20px;
+}
+.servicios-menu:hover a {
+  display: block;
+ }
 .main-home h1 {
   padding-top: 140px;
   font-size: 70px;
@@ -53,6 +90,14 @@
 }
 .services {
   background: url("../images/service.jpg");
+  padding-bottom: 50px;
+  margin-top: -40px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.advice {
+  background: url("../images/advice.jpg");
   padding-bottom: 50px;
   margin-top: -40px;
   background-repeat: no-repeat;
@@ -156,14 +201,14 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 /* General sidebar styles */
 .bm-menu {
-  background: rgba(15, 131, 131, 0.5);
+  background: rgba(15, 131, 131, 0.7);
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
 }
 
 /* Morph shape necessary with bubble or elastic */
 .bm-morph-shape {
-  fill: rgba(15, 131, 131, 0.5);
+  fill: rgba(15, 131, 131, 0.8);
 }
 
 /* Wrapper for item list */
@@ -689,12 +734,21 @@ div.dataTables_wrapper span.select-item {
 }
 
 @media screen and (max-width: 1125px) {
+  .foo-btn {
+    position: relative !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    right: 0px !important;
+  }
   .main-home h1 {
     font-size: 45px !important;
   }
   .main-home h5 {
     font-weight: normal !important;
     font-size: 25px !important;
+  }
+  .epa {
+    width: 90% !important;
   }
   .about h1 {
     font-size: 50px !important;

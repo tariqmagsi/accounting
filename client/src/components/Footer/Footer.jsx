@@ -38,19 +38,19 @@ const Footer = () => {
         <br/>
         <Row style={{textAlign: "center", marginRight: "70px"}} className="row2">
           <Col>
-            <span style={{color: "silver"}}>Móvil</span><br/>
+            <span style={{color: "silver"}}>Teléfono</span><br/>
             <a href="tel:5115620663" style={{ color: "silver"}}>
-              <Phone style={{fontSize: "16px"}}/>
+              <span>&#9742;</span>
               <span style={{marginLeft: "5px"}}>(51)1-562-0663</span>
             </a>
             <br/>
             <a href="tel:5115620657" style={{color: "silver"}}>
-              <Phone style={{fontSize: "18px"}}/>
+              <span>&#9742;</span>
               <span style={{marginLeft: "5px"}}>(51)1-562-0657</span>
             </a>
           </Col>
           <Col>
-            <span style={{color: "silver"}}>Teléfono</span><br/>
+            <span style={{color: "silver"}}>Celular</span><br/>
             <a href="tel:986617069" style={{color: "silver"}}>
               <Phone style={{fontSize: "18px"}}/>
               <span style={{marginLeft: "5px"}}>986 617 069</span>
@@ -66,7 +66,7 @@ const Footer = () => {
             <a href="https://www.facebook.com/Consultoria-contable-tributario-bermudez-SAC-100667508250436/" target="_blank" rel="noopener noreferrer">
               <Facebook style={{color: "silver"}} className="fb"/>
             </a>
-            <a href="https://api.whatsapp.com/send?phone=+923003750521&text=" 
+            <a href="https://api.whatsapp.com/send?phone=+51986617069&text=" 
               target="_blank" 
               rel="noopener noreferrer"
               style={{marginLeft: "20px"}}
@@ -105,20 +105,20 @@ const Footer = () => {
         </Row>
         <br/>
         <Row style={{display: "none", textAlign: "center"}} className="row1">
-            <span style={{color: "silver"}}>Móvil</span><br/>
+            <span style={{color: "silver"}}>Teléfono</span><br/>
             <a href="tel:5115620663" style={{ color: "silver"}}>
-              <Phone style={{fontSize: "16px"}}/>
+              <span>&#9742;</span>
               <span style={{marginLeft: "5px"}}>(51)1-562-0663</span>
             </a>
             <br/>
             <a href="tel:5115620657" style={{color: "silver"}}>
-              <Phone style={{fontSize: "18px"}}/>
+              <span>&#9742;</span>
               <span style={{marginLeft: "5px"}}>(51)1-562-0657</span>
             </a>
         </Row>
         <br/>
         <Row style={{display: "none", textAlign: "center"}} className="row1">
-            <span style={{color: "silver"}}>Teléfono</span><br/>
+            <span style={{color: "silver"}}>Celular</span><br/>
             <a href="tel:986617069" style={{color: "silver"}}>
               <Phone style={{fontSize: "18px"}}/>
               <span style={{marginLeft: "5px"}}>986 617 069</span>
@@ -135,7 +135,7 @@ const Footer = () => {
             <a href="https://www.facebook.com/Consultoria-contable-tributario-bermudez-SAC-100667508250436/" target="_blank" rel="noopener noreferrer">
               <Facebook style={{color: "silver"}} className="fb"/>
             </a>
-            <a href="https://api.whatsapp.com/send?phone=+923003750521&text=" 
+            <a href="https://api.whatsapp.com/send?phone=+51986617069&text=" 
               target="_blank" 
               rel="noopener noreferrer"
               style={{marginLeft: "20px"}}
@@ -172,9 +172,9 @@ const Footer = () => {
           mejor plan de contingencia evitando multas.
         </div>
         <br />
-        <span style={{ color: "silver" }}>
-          Contenido © 2020 Financial Accounting Services, Inc.
-        </span>
+        <div style={{ color: "silver" }}>
+          Copyright © 2020 Consultoria Contable Tributario Bermúdez SAC
+        </div>
         
         <ScrollTo>
           {({ scroll }) => (
@@ -184,6 +184,7 @@ const Footer = () => {
                 position: "absolute",
                 right: "50px"
               }}
+              className="foo-btn"
               onClick={() => scroll({ x: 0, y: 0, smooth: true })}
             >
               <KeyboardArrowUp/>

@@ -5,6 +5,7 @@ import Loading from 'react-fullscreen-loading';
 import male from "../../images/male.png"
 import female from "../../images/female.png"
 import ScrollAnimation from 'react-animate-on-scroll';
+import { Card } from "react-bootstrap";
 
 class AdditionalServices extends Component {
 
@@ -20,30 +21,32 @@ class AdditionalServices extends Component {
       return (
         <div>
           <Navbar />
-          <div className="services">
-            <div
-              className="main-home"
+          <div className="advice">
+          <div
               style={{
-                marginLeft: "50px",
-                color: "rgb(15, 131, 131)",
-                marginRight: "50px"
+                paddingTop: "140px",
+                color: "rgb(15, 131, 131)"
               }}
             >
               <ScrollAnimation animateIn="fadeInDown" animateOnce={true}>
-              <h1 style={{ fontWeight: "bold", marginBottom: "10px", color: "rgb(15, 131, 131)" }}>
-                Servicios Adicionales
-              </h1>
-              <h3>Brindamos los mejores servicios</h3>
+                <Card className="epa" style={{background: "rgba(15,131,131, 0.7)",textAlign:"center", width: "45%", marginLeft:"auto", marginRight: "auto"}}>
+                  <Card.Body>
+                    <h1 style={{ marginBottom: "10px", color: "white", }}>
+                      Servicios de Traducción de Inglés
+                    </h1>
+                    <div style={{color: "white"}}>
+                      Somos un grupo de profesionales nativos, y no nativos especializados en
+                      la enseñanza y traducción de inglés.             
+                    </div>
+                  </Card.Body>
+                </Card>
               </ScrollAnimation>
             </div>
           </div>
           <ScrollAnimation animateIn="fadeInLeft" animateOnce={true}>
           <div style={{ padding: "50px", paddingTop: "100px", paddingBottom: "150px" }}>
-            <h1 style={{ color: "rgb(15, 131, 131)" }}>Servicios de inglés en línea</h1>
-            Somos un grupo de profesionales nativos, y no nativos especializados en
-            la enseñanza y traducción de inglés.
-            <br />
-            <br />
+            <h1 style={{ color: "rgb(15, 131, 131)", textAlign: "center", borderBottom: "1px solid #eee" }}>Servicios de Traducción de Inglés</h1>
+            <br/>
             <strong style={{ color: "rgb(15, 131, 131)" }}>Brindamos servicios de Traducción de inglés:</strong>
             <br /> CVs, Documentos, Contratos, Tesis, Artículos científicos.
             <br />
