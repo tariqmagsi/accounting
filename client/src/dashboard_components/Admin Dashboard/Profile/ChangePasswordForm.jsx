@@ -238,7 +238,7 @@ class ChangePasswordForm extends Component {
                 style={{ width: "100%" }}
                 type="submit"
               >
-                Actualizar
+                Actualiza
               </Button>
             </Form.Group>
           ) : (
