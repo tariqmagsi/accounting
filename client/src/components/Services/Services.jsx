@@ -4,7 +4,6 @@ import Footer from "../Footer/Footer";
 import financial from "../../images/financial.jpeg";
 import audit from "../../images/tax.jpg";
 import reports from "../../images/reports.jpg";
-import { Button } from "react-bootstrap";
 import { withRouter } from "react-router";
 import Loading from 'react-fullscreen-loading';
 import ScrollAnimation from 'react-animate-on-scroll';

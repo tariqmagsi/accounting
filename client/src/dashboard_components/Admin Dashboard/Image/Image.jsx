@@ -5,7 +5,8 @@ import { withRouter } from "react-router";
 import Sidebar from "../Sidebar/Sidebar";
 import Navbar from "../../Navbar/Navbar";
 import { CircularProgress } from "@material-ui/core";
-import { Button } from "react-bootstrap";
+import { Button, Alert } from "react-bootstrap";
+import Files from "react-butterfiles";
 
 class Images extends Component {
   state = {
@@ -18,7 +19,7 @@ class Images extends Component {
         { label: "#", field: "_id", sort: "asc", width: 150 },
         {
           label: "Image",
-          field: "name",
+          field: "image",
           sort: "asc",
           width: 150
         },
@@ -32,28 +33,134 @@ class Images extends Component {
       rows: []
     },
     error: "",
-    
+    success: "",
+    files: [],
+    errors: [],
+    isUploading: false,
+    isDeleting: false
   };
 
-  initializeButtons = () => {
-    let arr = this.state.pendingAppointments.rows;
+  fetchImages = () => {
+    fetch(process.env.REACT_APP_IMAGE_API)
+      .then(res => res.json())
+      .then(json => {
+        if (json.success) {
+          this.initializeButtons(json.images)
+          this.setState({
+            files: [],
+            errors: [],
+            isLoggedIn: false
+          });
+        } else {
+          this.setState({
+            isLoggedIn: false
+          });
+        }
+      })
+      .catch(err =>
+        this.setState({
+          isLoggedIn: false
+        })
+      );
+  }
 
-    for (let i = 0; i < arr.length; i++) {
-      arr[i] = {
-        _id: arr[i]._id,
+  deleteImages = (id) => {
+    fetch(process.env.REACT_APP_IMAGE_API + `/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${getFromStorage(
+          process.env.REACT_APP_TOKEN_KEY
+        )}`
+      }
+    })
+      .then(res => res.json())
+      .then(json => {
+        if (json.success) {
+          this.initializeButtons(json.images)
+          this.setState({
+            error: "",
+            files: [],
+            errors: [],
+            isDeleting: false
+          });
+        } else {
+          this.setState({
+            error: "Algo salió mal",
+            success: "",
+            isLoading: true,
+            isDeleting: false
+          });
+        }
+      })
+      .catch(err =>
+        this.setState({
+          isLoading: true,
+          isDeleting: false
+        })
+      );
+  }
+
+  uploadImage = () => {
+    const formData = new FormData();
+    formData.append("file", this.state.files[0].src.file, this.state.files[0].src.file.name);
+
+    fetch(process.env.REACT_APP_IMAGE_API, {
+      method: "POST",
+      body: formData
+    })
+      .then(res => res.json())
+      .then(json => {
+        if (json.success) {
+          this.initializeButtons(json.images)
+          this.setState({
+            error: "",
+            success: "Imagen cargada con éxito",
+            files: [],
+            errors: [],
+            isUploading: false
+          });
+        } else {
+          this.setState({
+            error: "Algo salió mal",
+            success: "",
+            isLoading: true,
+            isUploading: false
+          });
+        }
+      })
+      .catch(err =>
+        this.setState({
+          error: "Algo salió mal",
+          success: "",
+          isLoading: true,
+          isUploading: false
+        })
+      );
+  }
+
+  initializeButtons = (rows) => {
+    let arr = [];
+    this.setState({ success: "", error: "" })
+    rows.forEach((item, i) => {
+      arr.push ({
+        _id: i+1,
+        image: <img src={`data:image/png;base64,${item.image}`} alt="photoss" style={{width: "200px", height:"100px"}}/>,
         action: (
           <Button
             variant="outline-danger"
             size="sm"
             onClick={() => {
-              this.setState({ id: arr[i]._id });
+              this.setState({isDeleting: true}, () => {this.deleteImages(item._id)})
             }}
           >
             Eliminar
           </Button>
         )
-      };
-    }
+      })
+    })
+
+    this.setState({ images: {columns: this.state.images.columns, rows: arr}})
   };
 
   authenticateUser = () => {
@@ -69,9 +176,7 @@ class Images extends Component {
       .then(res => res.json())
       .then(json => {
         if (json.success) {
-          this.setState({
-            isLoggedIn: false
-          });
+          this.fetchImages()
         } else {
           this.setState({ isLoggedIn: false }, () => {
             this.props.history.push("/Login");
@@ -104,8 +209,43 @@ class Images extends Component {
             <br />
             <br />
             <h4>Imágenes</h4>
-            
-            <MDBDataTable
+            <br/>
+
+            {this.state.error !== "" && <Alert style={{fontSize: "12px"}} variant="danger">{this.state.error}</Alert>}
+            {this.state.success !== "" && <Alert style={{fontSize: "12px"}} variant="success">{this.state.success}</Alert>}
+            <Files
+                multiple={false} 
+                maxSize="100mb"
+                accept={["image/jpg","image/jpeg", "image/png"]}
+                onSuccess={files => this.setState({ files, errors: [], error: "", success: "" })}
+                onError={errors => this.setState({ errors, files: [], error: "", success: "" })}
+                convertToBase64={true}
+            >
+                {({ browseFiles, getDropZoneProps, getLabelProps }) => (
+                    <>
+                        <div {...getDropZoneProps({ className: "myDropZone" })}/>
+                        <Button variant="success" onClick={browseFiles} size="sm">Seleccione archivos...</Button>
+                        <ol>
+                            {this.state.errors.length === 0 && 
+                              this.state.files.map(file => (
+                                <li key={file.name}>{file.name}</li>
+                            ))}
+                            {this.state.errors.map(error => (
+                                <li key={error.file.name} style={{color: "red"}}>
+                                    {error.file.name} - {error.type} (Error)
+                                </li>
+                            ))}
+                            <br/>
+                            {(this.state.files.length !== 0 && !this.state.isUploading) ? <Button variant="danger" size="sm" onClick={() => { this.setState({ isUploading: true },() => {this.uploadImage()}) }}>Cargar imagen</Button> :
+                              this.state.files.length !== 0 && <CircularProgress />
+                            }
+                        </ol>
+                    </>
+                )}
+            </Files>
+            <br/>
+            {!this.state.isDeleting ? 
+              <MDBDataTable
                 striped
                 bordered
                 hover
@@ -113,7 +253,11 @@ class Images extends Component {
                 noBottomColumns
                 small
                 responsiveXl
-            />
+                searching={false}
+              />
+              :
+              <CircularProgress />
+            }
             
           </div>
         </div>

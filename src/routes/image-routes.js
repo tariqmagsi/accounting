@@ -16,17 +16,16 @@ const fileUpload = multer({
   }
 });
 
-routes.post("/image",
-  fileUpload.single("image"),
-  async (req, res) => {
+routes.post("/image",fileUpload.single("file"), async (req, res) => {
     try {
       const buffer = await sharp(req.file.buffer)
         .png()
         .toBuffer();
 
-      const image = await Images({ image: buffer }).save();
-
-      res.send({ image, success: true });
+      const image = await Images({image: buffer.toString("base64")}).save();
+      const images = await Images.find({})
+ 
+      res.send({ images, success: true });
     } catch (e) {
       res.send({ e, success: false });
     }
@@ -34,9 +33,9 @@ routes.post("/image",
 );
 routes.get("/image", async (req, res) => {
   try {
-    const image = await Images.find({});
+    const images = await Images.find({});
 
-    res.send({ image, success: true });
+    res.send({ images, success: true });
   } catch (e) {
     res.send({ e, success: false });
   }
@@ -47,7 +46,10 @@ routes.delete("/image/:_id", async (req, res) => {
   try {
     const image = await Images.findById({ _id: req.params._id });
     await image.remove();
-    res.send({ image, success: true });
+
+    const images = await Images.find({})
+
+    res.send({ images, success: true });
   } catch (e) {
     res.send({ error: "Error Not Found", success: false });
   }

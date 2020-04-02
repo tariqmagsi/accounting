@@ -4,7 +4,7 @@ var autoIncrement = require("mongoose-auto-increment");
 const imageSchema = mongoose.Schema(
   {
     image: {
-      type: Buffer
+      type: String
     }
   },
   { toObject: { virtuals: true }, timestamps: true }
