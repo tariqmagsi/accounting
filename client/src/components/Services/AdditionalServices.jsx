@@ -29,7 +29,7 @@ class AdditionalServices extends Component {
               }}
             >
               <ScrollAnimation animateIn="fadeInDown" animateOnce={true}>
-                <Card className="epa" style={{background: "rgba(15,131,131, 0.7)",textAlign:"center", width: "45%", marginLeft:"auto", marginRight: "auto"}}>
+                <Card className="epa" style={{background: "rgba(15,131,131, 0.8)",textAlign:"center", width: "45%", marginLeft:"auto", marginRight: "auto"}}>
                   <Card.Body>
                     <h1 style={{ marginBottom: "10px", color: "white", }}>
                       Servicios de Traducción de Inglés
@@ -44,9 +44,11 @@ class AdditionalServices extends Component {
             </div>
           </div>
           <ScrollAnimation animateIn="fadeInLeft" animateOnce={true}>
-          <div style={{ padding: "50px", paddingTop: "100px", paddingBottom: "150px" }}>
+          
+          <div style={{ padding: "50px", paddingTop: "100px", paddingBottom: "150px", marginLeft: "50px", marginRight: "50px" }} className="serviceMargin">
             <h1 style={{ color: "rgb(15, 131, 131)", textAlign: "center", borderBottom: "1px solid #eee" }}>Servicios de Traducción de Inglés</h1>
             <br/>
+            
             <strong style={{ color: "rgb(15, 131, 131)" }}>Brindamos servicios de Traducción de inglés:</strong>
             <br /> CVs, Documentos, Contratos, Tesis, Artículos científicos.
             <br />
@@ -61,6 +63,7 @@ class AdditionalServices extends Component {
             <br />
             <strong style={{ color: "rgb(15, 131, 131)" }}>Quienes Somos Nosotros:</strong>
             <br />
+            <div>
             R. Maxwell Wheeless, inglés nativo hablante, estudiante de la escuela de
             post-grado in Cybersecurity (Seguridad Cibernética) en la Universidad de
             Baltimore, USA. Maxwell inició su educación en las mejores escuelas
@@ -90,9 +93,8 @@ class AdditionalServices extends Component {
             como también preparación de perfiles de Linkdein.
             <br />
             <br />
-            <img src={male} alt="Maxwell" style={{height: "300px"}}/>
-            <br />
-            <br />
+            <img src={male} alt="Maxwell" style={{height: "200px", float: "left", marginRight: "40px"}}/>
+            <i>
             Maxwell es un joven profesional dispuesto a brindarte el mejor servicio
             para que puedas aprender inglés en un tiempo prudencialmente corto, es
             un educador muy paciente e interactivo con su audiencia, al ser un
@@ -102,8 +104,12 @@ class AdditionalServices extends Component {
             lectura y escritura, su hermano menor es un famoso escritor llamado Nick
             Wheeless establecido en San Diego, California. Maxwell está dispuesto a
             que puedas convertir el inglés como tu segundo idioma nativo.
+            </i>
             <br />
             <br />
+            <br />
+            <br/>
+            <br/>
             María Luz Barreto Bermúdez estudiante de la escuela de post-grado en
             Cybersecurity (Seguridad Cibernética) en la Universidad de Baltimore,
             USA. María Luz obtuvo su bachiller en ciencias como Química realizada en
@@ -135,19 +141,23 @@ class AdditionalServices extends Component {
             especialmente en Python.
             <br />
             <br />
-            <img src={female} alt="María Luz tiene" style={{height: "300px"}}/>
-            <br />
-            <br />
-            María Luz es una joven profesional dispuesta a enseñarte el inglés en
-            una forma atractiva y dinámica como ella lo aprendió. Tiene la
-            experiencia que al no ser nativa hablante del inglés puede enseñarte
-            estrategias y métodos que harán tu aprendizaje ameno y productivo. Ella
-            perfeccionó su inglés estudiando cursos cortos en Bostón y Maryland.
-            Ella tiene una base sólida en gramática y técnicas de comprensión
-            lectora que te ayudarán a aprender el inglés como tu segunda lengua
-            nativa.
+            <img src={female} alt="María Luz tiene" style={{height: "200px", float: "left", marginRight: "40px"}}/>
+            <i>
+              María Luz es una joven profesional dispuesta a enseñarte el inglés en
+              una forma atractiva y dinámica como ella lo aprendió. Tiene la
+              experiencia que al no ser nativa hablante del inglés puede enseñarte
+              estrategias y métodos que harán tu aprendizaje ameno y productivo. Ella
+              perfeccionó su inglés estudiando cursos cortos en Bostón y Maryland.
+              Ella tiene una base sólida en gramática y técnicas de comprensión
+              lectora que te ayudarán a aprender el inglés como tu segunda lengua
+              nativa.En USA trabajó como servicio al
+              cliente bilingüe y enseña a inglés nativo
+              hablantes el español.
+            </i>
+            </div>
             <br />
           </div>
+          
           </ScrollAnimation>
           <Footer />
         </div>

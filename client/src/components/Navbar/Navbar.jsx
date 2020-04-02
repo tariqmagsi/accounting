@@ -20,13 +20,13 @@ class Navbar extends Component {
             fontSize: "12px", paddingLeft: "30px"
           }}
         >
-          <a href="tel:5115620663" style={{ color: "white", paddingLeft: "20px"}}>
+          <a href="tel:(+51)1-562-0663" style={{ color: "white", paddingLeft: "20px"}}>
             <span>&#9742;</span>
-            <span style={{marginLeft: "5px"}}>(51)1-562-0663</span>
+            <span style={{marginLeft: "5px"}}>(+51)1-562-0663</span>
           </a>
-          <a href="tel:5115620657" style={{color: "white", paddingLeft: "40px"}} className="start-bar">
+          <a href="tel:(+51)1-562-0657" style={{color: "white", paddingLeft: "40px"}} className="start-bar">
             <span>&#9742;</span>
-            <span style={{marginLeft: "5px"}}>(51)1-562-0657</span>
+            <span style={{marginLeft: "5px"}}>(+51)1-562-0657</span>
           </a>
           <a href="tel:986617069" style={{color: "white", paddingLeft: "40px"}} className="start-bar">
             <Phone style={{fontSize: "18px"}}/>

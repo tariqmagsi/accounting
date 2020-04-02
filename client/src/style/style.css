@@ -7,6 +7,9 @@
   padding: 0;
   font-family: "Roboto", Arial, Tahoma, sans-serif
 }
+.ul-list li {
+  padding-bottom: 10px !important;
+}
 .dropdown {
   float: left;
   overflow: hidden;
@@ -89,13 +92,38 @@
   background-attachment: fixed;
 }
 .services {
-  background: url("../images/service.jpg");
+  background: url("../images/employAdvice.jpg");
   padding-bottom: 50px;
   margin-top: -40px;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
 }
+.employAdvice {
+  background: url("../images/services.jpg");
+  padding-bottom: 50px;
+  margin-top: -40px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.faAdvice {
+  background: url("../images/faAdvice.jpg");
+  padding-bottom: 50px;
+  margin-top: -40px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.TaxAdvice {
+  background: url("../images/TaxAdvice.jpg");
+  padding-bottom: 50px;
+  margin-top: -40px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 .advice {
   background: url("../images/advice.jpg");
   padding-bottom: 50px;
@@ -804,5 +832,9 @@ div.dataTables_wrapper span.select-item {
   }
   .quote {
     display: none !important;
+  }
+  .serviceMargin {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 }

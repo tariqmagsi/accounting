@@ -18,7 +18,7 @@ class FAAdvice extends Component {
       return (
         <div>
           <Navbar />
-          <div className="advice">
+          <div className="faAdvice">
             <div
               style={{
                 paddingTop: "140px",
@@ -26,7 +26,7 @@ class FAAdvice extends Component {
               }}
             >
               <ScrollAnimation animateIn="fadeInDown" animateOnce={true}>
-                <Card className="epa" style={{background: "rgba(15,131,131, 0.7)",textAlign:"center", width: "45%", marginLeft:"auto", marginRight: "auto"}}>
+                <Card className="epa" style={{background: "rgba(15,131,131, 0.8)",textAlign:"center", width: "45%", marginLeft:"auto", marginRight: "auto"}}>
                   <Card.Body>
                     <h1 style={{ marginBottom: "10px", color: "white", }}>
                       Asesoría Contable Financiera
@@ -60,17 +60,15 @@ class FAAdvice extends Component {
             <br/>
             <section>
               <Container>
-                <ul>
+                <ul className="ul-list">
                     <li>Contabilidad Computarizada.</li>
-                    <br/>
                     <li>Declaración de impuestos.</li>
-                        <br/>
-                    <li>Tratamiento y desarrollo de estados financieros.</li><br/>
-                    <li>Devolución de beneficios tributarios (Percepción, IGV, Drawback).</li><br/>
-                    <li>Elaboración de Libros Contables.</li><br/>
-                    <li>Elaboración de estados financieros (mensuales, semestrales y anuales).</li><br/>
-                    <li>Gestión de documentación contable tributario.</li><br/>
-                    <li>Libros Contables Electrónicos (PLE).</li><br/>
+                    <li>Tratamiento y desarrollo de estados financieros.</li>
+                    <li>Devolución de beneficios tributarios (Percepción, IGV, Drawback).</li>
+                    <li>Elaboración de Libros Contables.</li>
+                    <li>Elaboración de estados financieros (mensuales, semestrales y anuales).</li>
+                    <li>Gestión de documentación contable tributario.</li>
+                    <li>Libros Contables Electrónicos (PLE).</li>
                     <li>Amplia experiencia en la preparación de Homologación.</li>
                 </ul>
               </Container>

@@ -18,7 +18,7 @@ class TaxAdvice extends Component {
       return (
         <div>
           <Navbar />
-          <div className="advice">
+          <div className="TaxAdvice">
             <div
               style={{
                 paddingTop: "140px",
@@ -26,7 +26,7 @@ class TaxAdvice extends Component {
               }}
             >
               <ScrollAnimation animateIn="fadeInDown" animateOnce={true}>
-                <Card className="epa" style={{background: "rgba(15,131,131, 0.7)",textAlign:"center", width: "45%", marginLeft:"auto", marginRight: "auto"}}>
+                <Card className="epa" style={{background: "rgba(15,131,131, 0.8)",textAlign:"center", width: "45%", marginLeft:"auto", marginRight: "auto"}}>
                   <Card.Body>
                     <h1 style={{ marginBottom: "10px", color: "white", }}>
                       Asesoría Tributaria
@@ -58,18 +58,16 @@ class TaxAdvice extends Component {
             <br/>
             <section>
               <Container>
-                <ul>
+                <ul className="ul-list">
                     <li>Facturación electrónica.</li>
-                    <br/>
                     <li>Servicios de auditoria.</li>
-                        <br/>
-                    <li>Servicios de fiscalizaciones SUNAT.</li><br/>
-                    <li>Balances mensuales.</li><br/>
-                    <li>Cartas inductivas SUNAT, SUNAFIL, MINTRA.</li><br/>
-                    <li>Asesorías Tributarias permanentes.</li><br/>
-                    <li>Plataforma de negocios con enfoque financiero.</li><br/>
-                    <li>Brindamos declaraciones PDT( Mensuales y Anuales).</li><br/>
-                    <li>Planillas electrónicas, PLAME y T-Registro.</li><br/>
+                    <li>Servicios de fiscalizaciones SUNAT.</li>
+                    <li>Balances mensuales.</li>
+                    <li>Cartas inductivas SUNAT, SUNAFIL, MINTRA.</li>
+                    <li>Asesorías Tributarias permanentes.</li>
+                    <li>Plataforma de negocios con enfoque financiero.</li>
+                    <li>Brindamos declaraciones PDT( Mensuales y Anuales).</li>
+                    <li>Planillas electrónicas, PLAME y T-Registro.</li>
                     <li>Declaración jurada anual de impuesto a la renta de personas jurídicas, personas
                         naturales, asesorías tributarios en consorcios y empresas transnacionales.</li>
                 </ul>

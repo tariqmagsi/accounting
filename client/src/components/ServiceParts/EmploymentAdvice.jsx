@@ -18,7 +18,7 @@ class EmploymentAdvice extends Component {
       return (
         <div>
           <Navbar />
-          <div className="advice" style={{margin: 0}}>
+          <div className="employAdvice" style={{margin: 0}}>
             <div
               style={{
                 paddingTop: "140px",
@@ -26,7 +26,7 @@ class EmploymentAdvice extends Component {
               }}
             >
               <ScrollAnimation animateIn="fadeInDown" animateOnce={true}>
-                <Card style={{background: "rgba(15,131,131, 0.7)",textAlign:"center", width: "45%", marginLeft:"auto", marginRight: "auto"}} className="epa">
+                <Card style={{background: "rgba(15,131,131, 0.8)",textAlign:"center", width: "45%", marginLeft:"auto", marginRight: "auto"}} className="epa">
                   <Card.Body>
                     <h1 style={{ marginBottom: "10px", color: "white", }}>
                       Asesoría Laboral
@@ -56,16 +56,14 @@ class EmploymentAdvice extends Component {
             <br/>
             <section>
                 <Container>
-                <ul>
+                <ul className="ul-list">
                     <li>Declaraciones mensuales de la planilla electrónica de sus trabajadores (PDT ).</li>
-                    <br/>
                     <li>Evaluación y elaboración de planilla de pago de haberes de empleados y
                         obreros de distintos regímenes laborales.</li>
-                        <br/>
                     <li>Pago de Planilla de AFP NET mediante una cuenta corriente en soles de la
-                        empresa afiliada a las AFPS´s.</li><br/>
+                        empresa afiliada a las AFPS´s.</li>
                     <li>Evaluación y/o elaboración de cálculos de gratificaciones, CTS, distribución de
-                        utilidades, entre otros.</li><br/>
+                        utilidades, entre otros.</li>
                     <li>Analizamos los EE.FF y preparamos los documentos necesarios para poder
                         adquirir un crédito bancario en la búsqueda de mejoras en tu aspecto financiero.</li>
                 </ul>

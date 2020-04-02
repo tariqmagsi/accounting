@@ -1,20 +1,40 @@
 import React, { Component } from "react";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
-import financial from "../../images/financial.jpeg";
-import audit from "../../images/tax.jpg";
-import reports from "../../images/reports.jpg";
 import { withRouter } from "react-router";
 import Loading from 'react-fullscreen-loading';
 import ScrollAnimation from 'react-animate-on-scroll';
+import "tachyons"
 
 class Services extends Component {
 
-  state = { flag: false }
+  state = { flag: false, images: [] }
+
+  fetchImages = () => {
+    fetch(process.env.REACT_APP_IMAGE_API)
+      .then(res => res.json())
+      .then(json => {
+        console.log(json)
+        if (json.success) {
+          this.setState({
+            flag: true,
+            images: json.images
+          });
+        } else {
+          this.setState({
+            flag: true
+          });
+        }
+      })
+      .catch(err =>
+        this.setState({
+          flag: true
+        })
+      );
+  }
 
   componentDidMount(){
-    setTimeout(() => this.setState({ flag: true }),
-                600)
+    this.fetchImages()
   }
 
   render() {
@@ -81,37 +101,18 @@ class Services extends Component {
             </ScrollAnimation>
             <br />
             <section style={{ textAlign: "center" }}>
-              <img
-                src={financial}
-                alt="financial"
-                style={{
-                  height: "200px",
-                  marginLeft: "10px",
-                  marginRight: "30px"
-                }}
-              />
-              <br style={{display: "none"}} className="image"/>
-              <br style={{display: "none"}} className="image"/>
-              <img
-                src={audit}
-                alt="audit"
-                style={{
-                  height: "200px",
-                  marginLeft: "10px",
-                  marginRight: "30px"
-                }}
-              />
-              <br style={{display: "none"}} className="image"/>
-              <br style={{display: "none"}} className="image"/>
-              <img
-                src={reports}
-                alt="reports"
-                style={{
-                  height: "200px",
-                  marginLeft: "10px",
-                  marginRight: "30px"
-                }}
-              />
+              {this.state.images.map(item =>
+                <div className="ma2 pa2 v-top dib" key={item._id}>
+                  <img
+                    src={"data:img/png;base64," + item.image}
+                    alt="photoss"
+                    style={{
+                      height: "200px",
+                      width: "300px"
+                    }}
+                  />
+                </div>
+              )}
             </section>
           </div>
           <Footer />
