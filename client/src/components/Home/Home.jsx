@@ -56,7 +56,7 @@ class Home extends Component {
             </ScrollAnimation>
           </Col>
           <Col>
-            <img src={image} alt="image1" style={{ position: "relative", left: 0, width: "700px", height: "100%", top: 0, bottom: 0}}/>
+            <img src={image} alt="image1" style={{ position: "relative", float: "right", left: 0, width: "700px", height: "100%", top: 0, bottom: 0, right: 0, marginRight: 0}}/>
           </Col>
         </Row>
 

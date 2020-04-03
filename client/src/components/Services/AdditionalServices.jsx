@@ -64,36 +64,42 @@ class AdditionalServices extends Component {
             <strong style={{ color: "rgb(15, 131, 131)" }}>Quienes Somos Nosotros:</strong>
             <br />
             <div>
-            R. Maxwell Wheeless, inglés nativo hablante, estudiante de la escuela de
-            post-grado in Cybersecurity (Seguridad Cibernética) en la Universidad de
-            Baltimore, USA. Maxwell inició su educación en las mejores escuelas
-            privadas del estado de Maryland, haciendo su educación primaria, media y
-            secundaria en Boy’s Latin School of Maryland. Después, Maxwell obtuvo su
-            bachillerato en Filosofía in Loyola University in Maryland, USA. Maxwell
-            es un profesional muy destacado en su área, apenas empezó su cambio de
-            carrera profesional de filosofía a Seguridad Cibernética el año pasado
-            del 2019, participó en el National Cyber League (NCL) alcanzando el
-            primer puesto en la Universidad de Baltimore, y a nivel bronce, en su
-            categoría alcanzó el puesto 67/2092 y a nivel nacional de todo los
-            Estados Unidos llegó al puesto 991/4149. Ver sus credenciales en su
-            perfil de LinkedIn{" "}
-            <a href="https://cyberskyline.com/verify/BNLFKY700GRC" alt="link">
+            R. Maxwell Wheeless, inglés nativo hablante, estudiante de la escuela de post-grado in Cybersecurity
+            (Seguridad Cibernética) de la Universidad de Baltimore, USA. Maxwell inició su educación en las
+            mejores escuelas privadas del estado de Maryland, realizando su educación primaria, media y
+            secundaria en Boy’s Latin School of Maryland, USA. Tan pronto terminó la secundaria, Maxwell
+            obtuvo su bachillerato en Filosofía in Loyola University in Maryland, USA. Maxwell es muy hábil y
+            perspicaz ya que apenas inició su cambio de carrera profesional de Filosofía a Seguridad Cibernética
+            el año pasado del 2019, participó en el National Cyber League (NCL) alcanzando el primer puesto en
+            la Universidad de Baltimore; a nivel bronce, en su categoría alcanzó el puesto 67/2092 y a nivel
+            nacional de todo los Estados Unidos llegó al puesto 991/4149. Ver sus credenciales en su perfil de
+            LinkedIn{" "}
+            <a href="https://cyberskyline.com/verify/BNLFKY700GRC" target="_blank" alt="link" rel="noopener noreferrer" >
               cyberskyline
             </a>{" "}
-            . Maxwell demuestra ser un profesional con grande facilidades para
-            afrontar cualquier reto que se le presente, y una habilidad innata de
-            aprender fácilmente. Por otro lado, también goza de habilidades
-            interpersonales pues su experiencia lo certifica, estuvo como manager en
-            Salsaritas Westminster Restaurant por siete años y asimismo prestó
-            servicios al cliente en prestigiosas compañías americanas tales como
-            Men’s Wearhouse, donde fue vendedor ejecutivo en Joseph A. Bank, y
-            Merrill Edge como Asesor de Soluciones Financieras. Recientemente,
-            Maxwell trabaja en sus tiempos libres para los mismos americanos
-            ayudándolos en la preparación de resúmenes, introducciones de Cvs, asi
-            como también preparación de perfiles de Linkdein.
-            <br />
-            <br />
+            . 
+            <br/>
+            <br/>
+            Maxwell demuestra ser un profesional con grandes facilidades para afrontar cualquier reto que se le
+            presente, y una habilidad innata de aprender muy fácilmente. Además, goza de habilidades
+            interpersonales cuya experiencia lo certifica, estuvo como manager en Salsaritas Westminster
+            Restaurant por siete años, Asesor de Soluciones Financieras en Merrill Edge y como vendedor
+            ejecutivo en Men’s Wearhouse y Joseph A. Bank. Recientemente, Maxwell trabaja en sus tiempos
+            libres para los mismos americanos ayudándolos en la preparación de sus hojas de vida Cvs,
+            aplicaciones para ingresar a las universidades de pre-grado y pos-grado , así como también
+            preparación en sus perfiles de Linkdein. A continuación, se muestra sus perfiles online donde labora
+            en su tiempo libre.
+            
             <img src={male} alt="Maxwell" style={{height: "200px", float: "left", marginRight: "40px"}}/>
+            <ul style={{textAlign:"center"}}>
+              <li style={{listStyle: "none"}}>
+                <a href="https://www.upwork.com/o/profiles/users/~01480f117e94f00fa6/?fbclid=IwAR2R1tYbe_U7sd1nmkGQs74Z0vkcBGUmFQRIeSvv8QhLPxyC0ZVKZ0Gg3aM" target="_blank" rel="noopener noreferrer" >Upwork</a>
+              </li>
+              <li style={{listStyle: "none"}}>
+                <a href="https://www.fiverr.com/maxwheeless" target="_blank" rel="noopener noreferrer" >Fiverr</a>
+              </li>
+            </ul>
+            <div style={{textAlign: "center"}}>
             <i>
             Maxwell es un joven profesional dispuesto a brindarte el mejor servicio
             para que puedas aprender inglés en un tiempo prudencialmente corto, es
@@ -105,43 +111,43 @@ class AdditionalServices extends Component {
             Wheeless establecido en San Diego, California. Maxwell está dispuesto a
             que puedas convertir el inglés como tu segundo idioma nativo.
             </i>
+            </div>
             <br />
-            <br />
-            <br />
+            María Luz Barreto Bermúdez, nativa hablante de español, estudiante de la escuela de post-grado en
+            la rama de Cybersecurity (Seguridad Cibernética) de la Universidad de Baltimore, USA. María Luz
+            obtuvo su bachiller en ciencias como Química realizada en una de las mejores universidades privadas
+            del Perú denominada Pontificia Universidad Católica del Perú. Luego, María Luz fue contratada por
+            Petro Ecuador en el área de Química Computacional, cuya investigación la realizó en la Universidad
+            San Francisco de Quito en el Departamento de Química Computacional, ganó muchas becas para
+            entrenamientos y conferencias internacionales. Inmediatamente, laburó en la Universidad Peruana
+            Cayetano Heredia en el departamento de Bioinformática y terminó realizando un entrenamiento en
+            Johns Hopkins University in the Biochemistry and Biophysics Department.
             <br/>
             <br/>
-            María Luz Barreto Bermúdez estudiante de la escuela de post-grado en
-            Cybersecurity (Seguridad Cibernética) en la Universidad de Baltimore,
-            USA. María Luz obtuvo su bachiller en ciencias como Química realizada en
-            una de las mejores universidades privadas del Perú denominada Pontificia
-            Universidad Católica del Perú. Años mas tarde, María Luz fue contratada
-            por Petro Ecuador en el área de Química Computacional radicada en la
-            Universidad San Francisco de Quito; luego, trabajó en la Universidad
-            Peruana Cayetano Heredia en el departamento de Bioinformática y terminó
-            haciendo un entrenamiento en Johns Hopkins University in the
-            Biochemistry and Biophysics Department. María luz mostró gran interés en
-            trabajar en el lado computacional y es así como empezó a realizar su
-            maestría en CyberSecurity (Seguridad Cibernética) y también fue
-            partícipe en la National Cyber League (NCL) donde alcanzó el segundo
-            puesto en la Universidad de Baltimore, y a nivel bronce de cateogoría
-            alcanzó el puesto 74/2092; por último, a nivel nacional de todo los
-            Estados Unidos alcanzó el puesto 1021/4149. Ver sus credenciales:
-            <a href="https://cyberskyline.com/report/YYP0EY8RB7GM" alt="link">
+            María luz mostró gran interés en el lado computacional y es así como empezó a realizar su maestría
+            en Seguridad Cibernética y también fue partícipe en la National Cyber League (NCL), en el cual
+            alcanzó el segundo puesto en la Universidad de Baltimore; a nivel bronce, el puesto 74/2092 y a
+            nivel nacional de los Estados Unidos alcanzó el puesto 1021/4149. Sus credenciales son mostrados
+            en su perfil de LinkdeIn {" "}
+            <a href="https://cyberskyline.com/report/YYP0EY8RB7GM" alt="link" rel="noopener noreferrer" >
               cyberskyline
-            </a>{" "}
-            María Luz tiene experiencia como instructora educativa por mas de 10
-            años, estuvo de asistenta de enseñanza en química 1 y 2, y física 3
-            durante su pregrado. También, estuvo de asistenta educativa en química 2
-            en la Universidad San Francisco de Quito, Ecuador. Asimismo, participó
-            como miembro activo y cooperativo para preparar eventos de festividades,
-            a nivel nacional, como el Año de la Química 2011. Actualmente, María Luz
-            en sus tiempos libres se dedica a dictar clases privadas de español e
-            inglés en Estados Unidos, y su mayor pasatiempo es explorar programas
-            computacionales y profundizar sus habilidad en programación,
-            especialmente en Python.
-            <br />
-            <br />
+            </a>.{" "}
+            María Luz tiene experiencia como instructora educativa por
+            más de 10 años ya que estuvo de asistenta de enseñanza en química 1 y 2, y física 3 durante su
+            pregrado. Además, como asistenta educativa en química 2 en la Universidad San Francisco de Quito,
+            Ecuador. Asimismo, participó como miembro activo y cooperativo para preparar eventos de
+            festividades, a nivel nacional, como el Año de la Química 2011, entre otros. Actualmente, María Luz
+            en sus tiempos libres se dedica a dictar clases privadas de español e inglés en Estados Unidos,
+            traducción de inglés-español en ediciones de subtítulos de videos y su pasatiempo es explorar
+            programas computacionales y profundizar su habilidad en programación, especialmente en Python.
+            A continuación, se muestra el perfil online donde labora en su tiempo libre: {" "}
+            <ul style={{textAlign: "center"}}>
+              <li style={{listStyle: "none"}}>
+                <a href="https://www.fiverr.com/marialuz2019" target="_blank" rel="noopener noreferrer">Fiverr</a>
+              </li>
+            </ul>
             <img src={female} alt="María Luz tiene" style={{height: "200px", float: "left", marginRight: "40px"}}/>
+            <div style={{textAlign: "center"}}>
             <i>
               María Luz es una joven profesional dispuesta a enseñarte el inglés en
               una forma atractiva y dinámica como ella lo aprendió. Tiene la
@@ -154,6 +160,7 @@ class AdditionalServices extends Component {
               cliente bilingüe y enseña a inglés nativo
               hablantes el español.
             </i>
+            </div>
             </div>
             <br />
           </div>
