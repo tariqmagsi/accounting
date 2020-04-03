@@ -35,8 +35,7 @@ class About extends Component {
               </h1>
 
               <h3 style={{  fontSize: "50px" }}>
-                Conozca a Las Personas
-                <br /> Que Lo Atienden.
+                Conozca a las personas <br/> que lo Atenderán.
               </h3>
             </div>
             </ScrollAnimation>
