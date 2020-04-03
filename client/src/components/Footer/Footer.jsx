@@ -51,14 +51,14 @@ const Footer = () => {
           </Col>
           <Col>
             <span style={{color: "silver"}}>Celular</span><br/>
-            <a href="tel:986617069" style={{color: "silver"}}>
+            <a href="tel:(+51)986617069" style={{color: "silver"}}>
               <Phone style={{fontSize: "18px"}}/>
-              <span style={{marginLeft: "5px"}}>986 617 069</span>
+              <span style={{marginLeft: "5px"}}>(+51)986 617 069</span>
             </a>
             <br/>
-            <a href="tel:991696527" style={{color: "silver"}}>
+            <a href="tel:(+51)991696527" style={{color: "silver"}}>
               <Phone style={{fontSize: "18px"}}/>
-              <span style={{marginLeft: "5px"}}>991 696 527</span>
+              <span style={{marginLeft: "5px"}}>(+51)991 696 527</span>
             </a>
           </Col>
           <Col>
@@ -119,14 +119,14 @@ const Footer = () => {
         <br/>
         <Row style={{display: "none", textAlign: "center"}} className="row1">
             <span style={{color: "silver"}}>Celular</span><br/>
-            <a href="tel:986617069" style={{color: "silver"}}>
+            <a href="tel:(+51)986617069" style={{color: "silver"}}>
               <Phone style={{fontSize: "18px"}}/>
-              <span style={{marginLeft: "5px"}}>986 617 069</span>
+              <span style={{marginLeft: "5px"}}>(+51)986 617 069</span>
             </a>
             <br/>
-            <a href="tel:991696527" style={{color: "silver"}}>
+            <a href="tel:(+51)991696527" style={{color: "silver"}}>
               <Phone style={{fontSize: "18px"}}/>
-              <span style={{marginLeft: "5px"}}>991 696 527</span>
+              <span style={{marginLeft: "5px"}}>(+51)991 696 527</span>
             </a>
         </Row>
         <br/>

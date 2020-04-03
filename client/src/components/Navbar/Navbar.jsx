@@ -28,13 +28,13 @@ class Navbar extends Component {
             <span>&#9742;</span>
             <span style={{marginLeft: "5px"}}>(+51)1-562-0657</span>
           </a>
-          <a href="tel:986617069" style={{color: "white", paddingLeft: "40px"}} className="start-bar">
+          <a href="tel:(+51)986617069" style={{color: "white", paddingLeft: "40px"}} className="start-bar">
             <Phone style={{fontSize: "18px"}}/>
-            <span style={{marginLeft: "5px"}}>986 617 069</span>
+            <span style={{marginLeft: "5px"}}>(+51)986 617 069</span>
           </a>
-          <a href="tel:991696527" style={{color: "white", paddingLeft: "40px"}} className="start-bar">
+          <a href="tel:(+51)991696527" style={{color: "white", paddingLeft: "40px"}} className="start-bar">
             <Phone style={{fontSize: "18px"}}/>
-            <span style={{marginLeft: "5px"}}>991 696 527</span>
+            <span style={{marginLeft: "5px"}}>(+51)991 696 527</span>
           </a>
           <span style={{float: "right", marginRight: "30px"}}>
             <a href="https://www.facebook.com/Consultoria-contable-tributario-bermudez-SAC-100667508250436/" target="_blank" rel="noopener noreferrer">
