@@ -73,30 +73,17 @@ class Services extends Component {
             <br />
 
             <section>
-              Somos Contadores especialistas y con amplia experiencia en
-              Tributación, laboral, Libros Contables electrónicos (PLE),
-              Contabilidad Computarizada
-              <br />
-              Damos servicios en : facturación Electrónica, elaboración de Estados
-              Financieros , Anuales , Semestrales , Mensuales
-              <br />
-              <br />
-              Amplia experiencia en ; Auditorias, Fiscalizaciones , Cartas
-              Inductivas -SUNAT Servicios en el preparado para Homologacion .
-              Declaraciones Mensuales y Anuales PDTs Planilla Electrónica, Plame y
-              T-Registro , Asesoría en tributación . Declaración jurada Anual de
-              Impuesto a la Renta de personas jurídicas y personas naturales ,
-              Empresas Trasnacionales, Sucursales , convenios Internacionales,
-              Asesoría financiera: sistemas de información que se adecuan
-              perfectamente a las necesidades de nuestros clientes, , analizamos
-              sus EE.FF y preparamos los documentos necesarios para poder adquirir
-              un crédito bancario, mejorando el aspecto financiero , Constitución
-              de empresas, Contratos diversos , Servicios de auditoria:
-              Fiscalizaciones internas y asesorías de empresas que no son nuestros
-              clientes. Servicios con amplia experiencia de Traductores de Inglés
-              -Español y Servicios de Intérprete de Español - Inglés o Inglés
-              Español a nivel Internacional . Nos encontramos en Av Elmer Faucett
-              N 303 Oficina N203 Urbanización Maranga -San Miguel
+              Somos Contadores especialistas con amplia experiencia en Tributación, Laboral, Libros Contables
+              electrónicos (PLE), Contabilidad Computarizada. Damos servicios en : facturación Electrónica,
+              elaboración de Estados Financieros , Anuales , Semestrales y Mensuales.
+              <br/>
+              <br/>
+              Además, prestamos servicios únicos y especializados como constitución de empresas, contratos
+              diversos. No solo prestamos servicios contables financieros sino también exclusivos Servicios de
+              Traducción e interpretación de de Inglés -Español y viceversa.
+              <br/>
+              <br/>
+              Nos encontramos en Av. Elmer Faucett N 303 Oficina N203 Urbanización Maranga -San Miguel
             </section>
             </ScrollAnimation>
             <br />

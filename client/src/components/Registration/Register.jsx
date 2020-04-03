@@ -119,12 +119,11 @@ class Register extends Component {
             </div>
           </div>
           <div>
-            <Row className="quote">
+            <Row className="quote" style={{ background: "rgba(15,131,131,0.8)" }}>
               <Col style={{
                 paddingTop: "100px", 
                 paddingBottom: "100px", 
                 paddingLeft: "100px", 
-                background: "rgba(15,131,131,0.8)",
                 color: "white",
                 marginRight: "-20px"
               }}

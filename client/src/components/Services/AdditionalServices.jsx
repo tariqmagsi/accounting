@@ -5,7 +5,7 @@ import Loading from 'react-fullscreen-loading';
 import male from "../../images/male.png"
 import female from "../../images/female.png"
 import ScrollAnimation from 'react-animate-on-scroll';
-import { Card } from "react-bootstrap";
+import { Card, Row, Col } from "react-bootstrap";
 
 class AdditionalServices extends Component {
 
@@ -61,6 +61,8 @@ class AdditionalServices extends Component {
             estudiantes que quieran estudiar en el extranjero.
             <br />
             <br />
+            <h2 style={{ color: "rgb(15,131,131)", textAlign: "center", borderBottom: "1px solid #eee" }}>R. Maxwell Wheeless</h2>
+            <br/>
             <strong style={{ color: "rgb(15, 131, 131)" }}>Quienes Somos Nosotros:</strong>
             <br />
             <div>
@@ -89,30 +91,37 @@ class AdditionalServices extends Component {
             aplicaciones para ingresar a las universidades de pre-grado y pos-grado , así como también
             preparación en sus perfiles de Linkdein. A continuación, se muestra sus perfiles online donde labora
             en su tiempo libre.
-            
-            <img src={male} alt="Maxwell" style={{height: "200px", float: "left", marginRight: "40px"}}/>
-            <ul style={{textAlign:"center"}}>
-              <li style={{listStyle: "none"}}>
+            <ul>
+              <li>
                 <a href="https://www.upwork.com/o/profiles/users/~01480f117e94f00fa6/?fbclid=IwAR2R1tYbe_U7sd1nmkGQs74Z0vkcBGUmFQRIeSvv8QhLPxyC0ZVKZ0Gg3aM" target="_blank" rel="noopener noreferrer" >Upwork</a>
               </li>
-              <li style={{listStyle: "none"}}>
+              <li>
                 <a href="https://www.fiverr.com/maxwheeless" target="_blank" rel="noopener noreferrer" >Fiverr</a>
               </li>
             </ul>
-            <div style={{textAlign: "center"}}>
-            <i>
-            Maxwell es un joven profesional dispuesto a brindarte el mejor servicio
-            para que puedas aprender inglés en un tiempo prudencialmente corto, es
-            un educador muy paciente e interactivo con su audiencia, al ser un
-            inglés nativo hablante de los Estados Unidos adquirirás la correcta
-            pronunciación y expresiones cotidianas que no son enseñadas en
-            instituciones convencionales. Maxwell viene de una familia innata a la
-            lectura y escritura, su hermano menor es un famoso escritor llamado Nick
-            Wheeless establecido en San Diego, California. Maxwell está dispuesto a
-            que puedas convertir el inglés como tu segundo idioma nativo.
-            </i>
-            </div>
+            <Row>
+              <Col>
+                <img src={male} alt="Maxwell" style={{height: "200px", marginRight: "40px", float: "left"}}/>
+                <div style={{textAlign: "center"}}>
+                  <i>
+                    Maxwell es un joven profesional dispuesto a brindarte el mejor servicio
+                    para que puedas aprender inglés en un tiempo prudencialmente corto, es
+                    un educador muy paciente e interactivo con su audiencia, al ser un
+                    inglés nativo hablante de los Estados Unidos adquirirás la correcta
+                    pronunciación y expresiones cotidianas que no son enseñadas en
+                    instituciones convencionales. Maxwell viene de una familia innata a la
+                    lectura y escritura, su hermano menor es un famoso escritor llamado Nick
+                    Wheeless establecido en San Diego, California. Maxwell está dispuesto a
+                    que puedas convertir el inglés como tu segundo idioma nativo.
+                  </i>
+                </div>
+              </Col>
+            </Row>
             <br />
+            <h2 style={{ color: "rgb(15,131,131)", textAlign: "center", borderBottom: "1px solid #eee" }}>
+              María Luz
+            </h2>
+            <br/>
             María Luz Barreto Bermúdez, nativa hablante de español, estudiante de la escuela de post-grado en
             la rama de Cybersecurity (Seguridad Cibernética) de la Universidad de Baltimore, USA. María Luz
             obtuvo su bachiller en ciencias como Química realizada en una de las mejores universidades privadas
@@ -141,26 +150,30 @@ class AdditionalServices extends Component {
             traducción de inglés-español en ediciones de subtítulos de videos y su pasatiempo es explorar
             programas computacionales y profundizar su habilidad en programación, especialmente en Python.
             A continuación, se muestra el perfil online donde labora en su tiempo libre: {" "}
-            <ul style={{textAlign: "center"}}>
+            <ul>
               <li style={{listStyle: "none"}}>
                 <a href="https://www.fiverr.com/marialuz2019" target="_blank" rel="noopener noreferrer">Fiverr</a>
               </li>
             </ul>
-            <img src={female} alt="María Luz tiene" style={{height: "200px", float: "left", marginRight: "40px"}}/>
-            <div style={{textAlign: "center"}}>
-            <i>
-              María Luz es una joven profesional dispuesta a enseñarte el inglés en
-              una forma atractiva y dinámica como ella lo aprendió. Tiene la
-              experiencia que al no ser nativa hablante del inglés puede enseñarte
-              estrategias y métodos que harán tu aprendizaje ameno y productivo. Ella
-              perfeccionó su inglés estudiando cursos cortos en Bostón y Maryland.
-              Ella tiene una base sólida en gramática y técnicas de comprensión
-              lectora que te ayudarán a aprender el inglés como tu segunda lengua
-              nativa.En USA trabajó como servicio al
-              cliente bilingüe y enseña a inglés nativo
-              hablantes el español.
-            </i>
-            </div>
+            <Row>
+              <Col>
+                <img src={female} alt="María Luz tiene" style={{height: "200px", float: "left", marginRight: "40px"}}/>
+                <div style={{textAlign: "center"}}>
+                  <i>
+                    María Luz es una joven profesional dispuesta a enseñarte el inglés en
+                    una forma atractiva y dinámica como ella lo aprendió. Tiene la
+                    experiencia que al no ser nativa hablante del inglés puede enseñarte
+                    estrategias y métodos que harán tu aprendizaje ameno y productivo. Ella
+                    perfeccionó su inglés estudiando cursos cortos en Bostón y Maryland.
+                    Ella tiene una base sólida en gramática y técnicas de comprensión
+                    lectora que te ayudarán a aprender el inglés como tu segunda lengua
+                    nativa.En USA trabajó como servicio al
+                    cliente bilingüe y enseña a inglés nativo
+                    hablantes el español.
+                  </i>
+                </div>
+              </Col>
+            </Row>
             </div>
             <br />
           </div>
