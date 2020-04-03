@@ -61,9 +61,9 @@ class AdditionalServices extends Component {
             estudiantes que quieran estudiar en el extranjero.
             <br />
             <br />
+            <h3 style={{ color: "rgb(15, 131, 131)" }}>Quienes Somos Nosotros:</h3>
             <h2 style={{ color: "rgb(15,131,131)", textAlign: "center", borderBottom: "1px solid #eee" }}>R. Maxwell Wheeless</h2>
             <br/>
-            <strong style={{ color: "rgb(15, 131, 131)" }}>Quienes Somos Nosotros:</strong>
             <br />
             <div>
             R. Maxwell Wheeless, inglés nativo hablante, estudiante de la escuela de post-grado in Cybersecurity
@@ -91,7 +91,7 @@ class AdditionalServices extends Component {
             aplicaciones para ingresar a las universidades de pre-grado y pos-grado , así como también
             preparación en sus perfiles de Linkdein. A continuación, se muestra sus perfiles online donde labora
             en su tiempo libre.
-            <ul>
+            <ul style={{marginLeft: "16px"}}>
               <li>
                 <a href="https://www.upwork.com/o/profiles/users/~01480f117e94f00fa6/?fbclid=IwAR2R1tYbe_U7sd1nmkGQs74Z0vkcBGUmFQRIeSvv8QhLPxyC0ZVKZ0Gg3aM" target="_blank" rel="noopener noreferrer" >Upwork</a>
               </li>
@@ -150,8 +150,8 @@ class AdditionalServices extends Component {
             traducción de inglés-español en ediciones de subtítulos de videos y su pasatiempo es explorar
             programas computacionales y profundizar su habilidad en programación, especialmente en Python.
             A continuación, se muestra el perfil online donde labora en su tiempo libre: {" "}
-            <ul>
-              <li style={{listStyle: "none"}}>
+            <ul style={{marginLeft: "16px"}}>
+              <li>
                 <a href="https://www.fiverr.com/marialuz2019" target="_blank" rel="noopener noreferrer">Fiverr</a>
               </li>
             </ul>
