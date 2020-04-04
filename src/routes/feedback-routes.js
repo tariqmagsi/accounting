@@ -20,4 +20,13 @@ routes.post("/get/feedback", async (req, res) => {
   }
 });
 
+routes.delete("/delete/feedback", async (req, res) => {
+  try {
+    const feedback = await Feedbacks.find({}).remove();
+    res.send({ feedback, success: true });
+  } catch (e) {
+    res.send({ success: false });
+  }
+});
+
 module.exports = routes;

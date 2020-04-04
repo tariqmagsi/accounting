@@ -119,7 +119,7 @@ class AdditionalServices extends Component {
             </Row>
             <br />
             <h2 style={{ color: "rgb(15,131,131)", textAlign: "center", borderBottom: "1px solid #eee" }}>
-              María Luz
+              María Luz Barreto Bermúdez
             </h2>
             <br/>
             María Luz Barreto Bermúdez, nativa hablante de español, estudiante de la escuela de post-grado en

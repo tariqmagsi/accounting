@@ -50,4 +50,13 @@ routes.patch("/update/appointment", auth, async (req, res, next) => {
   }
 });
 
+routes.delete("/delete/appointment", async (req, res) => {
+  try {
+    const appointment = await Appointments.find({}).remove()
+    res.send({ appointment, success: true });
+  } catch (e) {
+    res.send({ success: false });
+  }
+});
+
 module.exports = routes;
