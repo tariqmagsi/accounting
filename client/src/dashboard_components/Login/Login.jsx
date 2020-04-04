@@ -153,7 +153,7 @@ class Login extends Component {
                 onClick={()=>{
                   this.setState({open: true})
                 }}
-              >Forgot Password?</p>
+              >Se te olvidó tu contraseña?</p>
               <br />
               {this.state.flag ? (
                 <Form.Group>
